@@ -24,7 +24,6 @@ public class PlayerMouvement : MonoBehaviour
     void Mouvement()
     {
         Vector3 NewPos = new Vector3(_playerInputs.moveInput.x * movementSpeedMultiplier * slowSpeed , transform.position.y, _playerInputs.moveInput.y * movementSpeedMultiplier * slowSpeed) * Time.deltaTime;
-        print(_boundaries.CheckBoundaries(transform.position + NewPos));
         if (_boundaries.CheckBoundaries(transform.position + NewPos))
         {
             transform.Translate(NewPos);

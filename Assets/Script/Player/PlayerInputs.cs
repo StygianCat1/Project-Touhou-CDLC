@@ -6,6 +6,7 @@ public class PlayerInputs : MonoBehaviour
     
     private  PlayerInput _playerInput;
     private PlayerMouvement _playerMouvement;
+    private ApparanceChange _apparanceChange;
     
     [SerializeField] public Vector2 moveInput;
     [SerializeField] public bool shotInput;
@@ -62,6 +63,7 @@ public class PlayerInputs : MonoBehaviour
     {
         _playerInput = GetComponent<PlayerInput>();
         _playerMouvement = GetComponent<PlayerMouvement>();
+        _apparanceChange = GetComponent<ApparanceChange>();
     }
     
     public void OnMove(InputValue value)
@@ -92,6 +94,7 @@ public class PlayerInputs : MonoBehaviour
     public void SlowMouvementUsageChange()
     {
         _playerMouvement.ChangeForSlowMovement(slowMovementCheck);
+        _apparanceChange.ChangeApparanceOnSlow(slowMovementCheck);
     }
 
     public void OnUseActiveCapacity(InputValue value)

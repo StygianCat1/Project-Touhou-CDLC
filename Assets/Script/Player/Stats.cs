@@ -37,7 +37,7 @@ public class Stats : MonoBehaviour
         }
     }
 
-    [SerializeField] public int powerNbr = 0;
+    [SerializeField] public int powerNbr = 8;
     [SerializeField] public int grazeNbr = 0;
     [SerializeField] public int pointsNbr = 0;
 
