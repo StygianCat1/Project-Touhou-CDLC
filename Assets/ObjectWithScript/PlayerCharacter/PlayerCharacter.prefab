@@ -12,9 +12,11 @@ GameObject:
   - component: {fileID: 3299779455275814164}
   - component: {fileID: 8497077041165442373}
   - component: {fileID: 6893823049697661189}
+  - component: {fileID: 6982105985616355389}
   - component: {fileID: 1029756794777373505}
   - component: {fileID: 7697611610976539456}
   - component: {fileID: 2794574666969632577}
+  - component: {fileID: 1551605106931958371}
   m_Layer: 0
   m_Name: PlayerCharacter
   m_TagString: Player
@@ -105,12 +107,39 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &6982105985616355389
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7747568573035946354}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 116
+  m_CollisionDetection: 0
 --- !u!114 &1029756794777373505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,6 +201,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 258098bc6dacea84bb270d36c841c335, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerInputs: {fileID: 0}
-  movementSpeedMultiplier: 10
+  movementSpeedMultiplier: 25
   slowSpeed: 1
+--- !u!114 &1551605106931958371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7747568573035946354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cd9b9e4c29e9fc4f9acd2739c5c9388, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boundariesSize: {x: 52, y: 60}
+  objectWidth: 2
+  objectLenght: 3.5
