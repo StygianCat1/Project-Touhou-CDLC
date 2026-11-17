@@ -68,7 +68,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5dc3816fd361a58428345f5aa927718f, type: 2}
+  - {fileID: 2100000, guid: 62817167955917a41b179f7bd0d218db, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fc929a9f135f294db83db07f7a44126, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackSpeed: 50
+  attackSpeed: 40
 --- !u!114 &2959243894685928710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,8 +136,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 967830719bb0ca94eb51264500e131ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stats: {fileID: 0}
   baseDamage: 10
-  otherPotentialMultiplier: 1
+  otherPotentialMultiplier: 2
   totalDamage: 0
 --- !u!114 &-7652734568038883020
 MonoBehaviour:

@@ -58,8 +58,11 @@ public class SecondaryAttack : MonoBehaviour
     {
         if (TimerSecondaryAttack2())
         {
-            //Instantiate(secondaryAttack2, SpawnGameObject1.transform.position, SpawnGameObject1.transform.rotation);
-            //Instantiate(secondaryAttack2, SpawnGameObject2.transform.position, SpawnGameObject2.transform.rotation);
+            GameObject shot;
+            shot = Instantiate(secondaryAttack2, SpawnGameObject1.transform.position, SpawnGameObject1.transform.rotation);
+            shot.GetComponent<PlayerProjectileDamage>().stats = GetComponent<Stats>();
+            shot =Instantiate(secondaryAttack2, SpawnGameObject2.transform.position, SpawnGameObject2.transform.rotation);
+            shot.GetComponent<PlayerProjectileDamage>().stats = GetComponent<Stats>();
         }
     }
     
