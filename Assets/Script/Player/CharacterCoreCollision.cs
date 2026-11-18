@@ -7,11 +7,14 @@ public class CharacterCoreCollision : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        stats = GetComponent<Stats>();
+        stats = GetComponentInParent<Stats>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        print(other.gameObject.name + " collision with core");
+        if (other.tag == "Enemy" || other.tag == "EnemyProjectile")
+        {
+            print("deal damage to health in stats + add invincibility for short period of time");
+        }
     }
 }
