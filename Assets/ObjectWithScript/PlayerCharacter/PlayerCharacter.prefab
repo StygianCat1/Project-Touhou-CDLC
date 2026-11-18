@@ -263,6 +263,7 @@ GameObject:
   - component: {fileID: 2378644065620124076}
   - component: {fileID: 8474604556174444883}
   - component: {fileID: 3618851684131820548}
+  - component: {fileID: 5129755623955536010}
   m_Layer: 0
   m_Name: PlayerCharacter
   m_TagString: Player
@@ -307,7 +308,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7747568573035946354}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -459,7 +460,7 @@ MonoBehaviour:
   currentHealth: 3
   currentBomb: 3
   continueNbr: 3
-  powerNbr: 8
+  powerNbr: 5
   grazeNbr: 0
   pointsNbr: 0
 --- !u!114 &1838450150855834564
@@ -554,6 +555,28 @@ MonoBehaviour:
   delaySecondaryAttack1: 0.15
   secondaryAttack2: {fileID: 7499642409147269758, guid: e4b212736fcbe9f41b25a3fd3e65c577, type: 3}
   delaySecondaryAttack2: 0.3
+--- !u!95 &5129755623955536010
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7747568573035946354}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: af5e9bf913177cc4fa34cc9fb020badc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8008728704246586247
 GameObject:
   m_ObjectHideFlags: 0

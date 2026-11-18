@@ -3,10 +3,9 @@ using UnityEngine.InputSystem;
 
 public class PlayerInputs : MonoBehaviour
 {
-    
-    private  PlayerInput _playerInput;
     private PlayerMouvement _playerMouvement;
     private ApparanceChange _apparanceChange;
+    private Shoot _shoot;
     
     [SerializeField] public Vector2 moveInput;
     [SerializeField] public bool shotInput;
@@ -61,9 +60,10 @@ public class PlayerInputs : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
-        _playerInput = GetComponent<PlayerInput>();
         _playerMouvement = GetComponent<PlayerMouvement>();
         _apparanceChange = GetComponent<ApparanceChange>();
+        _shoot = GetComponent<Shoot>();
+
     }
     
     public void OnMove(InputValue value)
@@ -95,6 +95,7 @@ public class PlayerInputs : MonoBehaviour
     {
         _playerMouvement.ChangeForSlowMovement(slowMovementCheck);
         _apparanceChange.ChangeApparanceOnSlow(slowMovementCheck);
+        _shoot.MoveSecondaryAttackSocketForFocus(slowMovementCheck);
     }
 
     public void OnUseActiveCapacity(InputValue value)

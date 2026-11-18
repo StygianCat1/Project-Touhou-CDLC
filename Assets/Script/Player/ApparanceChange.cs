@@ -13,7 +13,6 @@ public class ApparanceChange : MonoBehaviour
 
     public void ChangeApparanceOnSlow(bool Slow)
     {
-        //meshRenderer.enabled = Slow;
-        
+        meshRenderer.enabled = Slow;
     }
 }

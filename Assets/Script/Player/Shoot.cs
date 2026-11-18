@@ -1,12 +1,14 @@
 using System;
 using Script.Player;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Shoot : MonoBehaviour
 {
     private PlayerInputs _playerInputs;
-    private PrimaryAttack primaryAttackRef;
-    private SecondaryAttack secondaryAttackRef;
+    private PrimaryAttack _primaryAttackRef;
+    private SecondaryAttack _secondaryAttackRef;
+    private Animator animator;
 
     [SerializeField] public KitChoosed characterKit;
     [SerializeField] public GameObject primaryAttackMuzzle;
@@ -15,12 +17,13 @@ public class Shoot : MonoBehaviour
     [SerializeField] public GameObject secondaryAttackMuzzle3;
     [SerializeField] public GameObject secondaryAttackMuzzle4;
     [SerializeField] public GameObject secondaryAttackMuzzle5;
-
+    
     private void Start()
     {
         _playerInputs = GetComponent<PlayerInputs>();
-        primaryAttackRef = GetComponent<PrimaryAttack>();
-        secondaryAttackRef = GetComponent<SecondaryAttack>();
+        _primaryAttackRef = GetComponent<PrimaryAttack>();
+        _secondaryAttackRef = GetComponent<SecondaryAttack>();
+        animator = GetComponent<Animator>();
     }
 
     public void Update()
@@ -47,8 +50,8 @@ public class Shoot : MonoBehaviour
     {
         if (characterKit == KitChoosed.FirstKit)
         {
-            primaryAttackRef.ShootPrimaryAttack1(primaryAttackMuzzle);
-            secondaryAttackRef.ShootSecondaryAttack1(secondaryAttackMuzzle1, secondaryAttackMuzzle2, secondaryAttackMuzzle3, secondaryAttackMuzzle4, secondaryAttackMuzzle5);
+            _primaryAttackRef.ShootPrimaryAttack1(primaryAttackMuzzle);
+            _secondaryAttackRef.ShootSecondaryAttack1(secondaryAttackMuzzle1, secondaryAttackMuzzle2, secondaryAttackMuzzle3, secondaryAttackMuzzle4, secondaryAttackMuzzle5);
         }
     }
 
@@ -56,8 +59,14 @@ public class Shoot : MonoBehaviour
     {
         if (characterKit == KitChoosed.SecondKit)
         {
-            primaryAttackRef.ShootPrimaryAttack2(primaryAttackMuzzle);
-            secondaryAttackRef.ShootSecondaryAttack2(secondaryAttackMuzzle1, secondaryAttackMuzzle2, secondaryAttackMuzzle3, secondaryAttackMuzzle4, secondaryAttackMuzzle5);
+            _primaryAttackRef.ShootPrimaryAttack2(primaryAttackMuzzle);
+            _secondaryAttackRef.ShootSecondaryAttack2(secondaryAttackMuzzle1, secondaryAttackMuzzle2, secondaryAttackMuzzle3, secondaryAttackMuzzle4, secondaryAttackMuzzle5);
         }
+    }
+
+
+    public void MoveSecondaryAttackSocketForFocus(bool focus)
+    {
+        animator.SetBool("Focus", focus);
     }
 }
