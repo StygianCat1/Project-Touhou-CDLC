@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -2634736394048158748}
   m_Layer: 0
   m_Name: BigHealthCollectible
-  m_TagString: Untagged
+  m_TagString: Collectible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122,7 +122,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 085144da1f3c07549a009941282e9010, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterStats: {fileID: 0}
   collectibleType: 3
   collectibleNbr: 1
 --- !u!114 &-2634736394048158748
@@ -140,3 +139,4 @@ MonoBehaviour:
   mouvementSpeed: 0.15
   directionChangeSpeed: 0.8
   angleChangeSpeed: 0.02
+  speedTowardPlayer: 1

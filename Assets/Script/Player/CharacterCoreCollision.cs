@@ -12,6 +12,11 @@ public class CharacterCoreCollision : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.GetComponent<ActivateCollectibleMovement>() != null)
+        {
+            other.gameObject.GetComponent<ActivateCollectibleMovement>().ActractCollectible();
+        }
+        
         if (other.tag == "Enemy" || other.tag == "EnemyProjectile")
         {
             print("deal damage to health in stats + add invincibility for short period of time");
