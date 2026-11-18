@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6014200849554147200}
   - component: {fileID: 8093046076794316869}
   - component: {fileID: -8572909027519816051}
+  - component: {fileID: -3583188620536454542}
   m_Layer: 0
   m_Name: SmallPowerCollectible
   m_TagString: Untagged
@@ -124,3 +125,18 @@ MonoBehaviour:
   characterStats: {fileID: 0}
   collectibleType: 0
   collectibleNbr: 1
+--- !u!114 &-3583188620536454542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6581181297074061766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ffbb17ace9f4164dbc77becf3b8c6f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouvementSpeed: 0.15
+  directionChangeSpeed: 0.8
+  angleChangeSpeed: 0.02

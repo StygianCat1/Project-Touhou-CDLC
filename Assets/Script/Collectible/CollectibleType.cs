@@ -3,12 +3,10 @@ using UnityEngine;
 
 public class CollectibleType : MonoBehaviour
 {
-    public Stats characterStats;
-    
     [SerializeField] public TypeOfCollectible collectibleType;
     [SerializeField] public int collectibleNbr;
     
-    public void Collectible() 
+    public void Collectible(Stats characterStats) 
     {
         if (collectibleType == TypeOfCollectible.Power)
         {
