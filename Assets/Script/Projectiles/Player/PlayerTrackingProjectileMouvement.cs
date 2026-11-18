@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerTrackingProjectileMouvement : MonoBehaviour
 {
     [SerializeField] public float attackSpeed = 1f;
+    [SerializeField] private GameObject[] targetList;
     [SerializeField] public GameObject target;
 
     private void Start()
@@ -25,8 +26,20 @@ public class PlayerTrackingProjectileMouvement : MonoBehaviour
 
     private void SearchForTarget()
     {
-        // code to search for the closest target
-         // target = "put result" 
+        GameObject closestTarget = null;
+        targetList = GameObject.FindGameObjectsWithTag("Enemy");
+        for (var targets = 0; targets < targetList.Length; targets++)
+        {
+            if (closestTarget == null)
+            {
+                closestTarget = targetList[targets];
+            }
+            if (Vector3.Distance(transform.position, closestTarget.transform.position) > Vector3.Distance(transform.position, targetList[targets].transform.position))
+            {
+                closestTarget = targetList[targets];
+            }
+        }
+        target = closestTarget;
     }
 
     private void MoveTracingBullet()
