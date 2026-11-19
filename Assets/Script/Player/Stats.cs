@@ -5,6 +5,21 @@ using UnityEngine;
 
 public class Stats : MonoBehaviour
 {
+    private GameObject gUI;
+
+    public GameObject gameUI
+    {
+        get { return gUI; }
+        set
+        {
+            gUI = value;
+            //gUI.GetComponent<DifficultyChoosen_GUI>();
+            //gUI.GetComponent<Score_GUI>();
+            gUI.GetComponent<PlayerInfo_GUI>().UpdateAllInfos(health, bomb);
+            gUI.GetComponent<PlayerStats_GUI>().UpdateAllStats(power,140, graze, points);
+            //gUI.GetComponent<Capacity_GUI>();
+        }
+    }
 
     [SerializeField] public int currentScore = 0;
     [SerializeField] public int hilScore;
@@ -22,6 +37,7 @@ public class Stats : MonoBehaviour
         set 
         {
             currentHealth = Mathf.Clamp(value, 0, 8);
+            gUI.GetComponent<PlayerInfo_GUI>().UpdateHealth(health);
         }
     }
 
@@ -34,6 +50,7 @@ public class Stats : MonoBehaviour
         set
         {
             currentBomb = Mathf.Clamp(value, 0, 8);
+            gUI.GetComponent<PlayerInfo_GUI>().UpdateBomb(bomb);
         }
     }
 
@@ -50,7 +67,39 @@ public class Stats : MonoBehaviour
         set
         {
             powerNbr = Mathf.Clamp(value, 0, 140);
+            gUI.GetComponent<PlayerStats_GUI>().UpdatePower(power, 140);
         }
+    }
+    
+    public int graze
+    {
+        get
+        {
+            return grazeNbr;
+        }
+        set
+        {
+            grazeNbr = value;
+            gUI.GetComponent<PlayerStats_GUI>().UpdateGraze(graze);
+        }
+    }
+
+    public int points
+    {
+        get
+        {
+            return pointsNbr;
+        }
+        set
+        {
+            pointsNbr = value;
+            gUI.GetComponent<PlayerStats_GUI>().UpdatePoints(points);
+        }
+    }
+
+    private void Start()
+    {
+        gameUI = GameObject.FindGameObjectWithTag("GUI");
     }
 
     public void TakeDamage()

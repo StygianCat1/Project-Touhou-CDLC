@@ -14,7 +14,7 @@ public class CollectibleType : MonoBehaviour
         }
         else if (collectibleType == TypeOfCollectible.Points)
         {
-            characterStats.pointsNbr += collectibleNbr;
+            characterStats.points += collectibleNbr;
         }
         else if (collectibleType == TypeOfCollectible.Health)
         {

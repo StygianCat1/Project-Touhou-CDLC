@@ -37,7 +37,7 @@ public class CharacterBodyCollision : MonoBehaviour
         {
             if (closeProjectiles[i] == other.gameObject)
             {
-                stats.grazeNbr += 1;
+                stats.graze += 1;
                 closeProjectiles.Remove(closeProjectiles[i]);
             }
         }

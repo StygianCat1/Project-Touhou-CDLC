@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - EnemyProjectile
   - Collectible
+  - GUI
   layers:
   - Default
   - TransparentFX

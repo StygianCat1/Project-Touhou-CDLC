@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6014200849554147200}
   - component: {fileID: 8093046076794316869}
   - component: {fileID: -8572909027519816051}
-  - component: {fileID: -3583188620536454542}
+  - component: {fileID: 2679143855709432986}
   m_Layer: 0
   m_Name: SmallPowerCollectible
   m_TagString: Collectible
@@ -67,7 +67,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 62817167955917a41b179f7bd0d218db, type: 2}
+  - {fileID: 2100000, guid: ba0366726211dcd49afabce0ae72647e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -124,7 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collectibleType: 0
   collectibleNbr: 1
---- !u!114 &-3583188620536454542
+--- !u!114 &2679143855709432986
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
