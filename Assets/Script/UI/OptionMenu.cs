@@ -8,9 +8,9 @@ public class OptionMenu : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public void CreateOtherUI(GameObject ui)
     {
-        
+        ui.SetActive(true);
+        gameObject.SetActive(false);
     }
 }

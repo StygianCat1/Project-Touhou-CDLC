@@ -13,8 +13,7 @@ public class MainMenu : MonoBehaviour
         ui.SetActive(true);
         gameObject.SetActive(false);
     }
-    
-    
+
     public void QuitApplication()
     {
         Application.Quit();

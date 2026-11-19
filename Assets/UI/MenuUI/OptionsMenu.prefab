@@ -3159,7 +3159,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4198858825621865063}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6101912310833906329}
+        m_TargetAssemblyTypeName: OptionMenu, Assembly-CSharp
+        m_MethodName: CreateOtherUI
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3622220792388014604
 GameObject:
   m_ObjectHideFlags: 0
@@ -4202,7 +4214,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2682527976898944715}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6101912310833906329}
+        m_TargetAssemblyTypeName: OptionMenu, Assembly-CSharp
+        m_MethodName: CreateOtherUI
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4463093056489787214
 GameObject:
   m_ObjectHideFlags: 0
@@ -6788,7 +6812,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1622556194592990204}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6101912310833906329}
+        m_TargetAssemblyTypeName: OptionMenu, Assembly-CSharp
+        m_MethodName: CreateOtherUI
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6529037397955518487
 GameObject:
   m_ObjectHideFlags: 0
@@ -7591,13 +7627,14 @@ GameObject:
   - component: {fileID: 1241275422825892043}
   - component: {fileID: 7519953362348218264}
   - component: {fileID: 4938666509975257292}
+  - component: {fileID: 6101912310833906329}
   m_Layer: 5
   m_Name: OptionsMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4183542021325905122
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7682,6 +7719,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &6101912310833906329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7326234625914099664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23de19941ae153f4ba966ef929d1404d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7392064362977406407
 GameObject:
   m_ObjectHideFlags: 0
