@@ -3596,6 +3596,8 @@ MonoBehaviour:
   - {fileID: 6005860138183419685}
   - {fileID: 2350740565459009949}
   - {fileID: 457587799009067642}
+  heartFull: {fileID: 0}
+  heartEmpty: {fileID: 0}
   bombImages:
   - {fileID: 7767442236357020219}
   - {fileID: 7732919971416001265}
@@ -3605,6 +3607,8 @@ MonoBehaviour:
   - {fileID: 1583794644768127226}
   - {fileID: 4472156159902621494}
   - {fileID: 3091277256574629783}
+  bombFull: {fileID: 0}
+  bombEmpty: {fileID: 0}
 --- !u!114 &5252693170334674678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4758,7 +4762,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 31d230a245d26a74abd7d0838b8a5ad0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
