@@ -19,6 +19,8 @@ public class CharacterCoreCollision : MonoBehaviour
         
         if (other.tag == "Enemy" || other.tag == "EnemyProjectile")
         {
+            stats.health -= 1;
+
             print("deal damage to health in stats + add invincibility for short period of time");
         }
     }
