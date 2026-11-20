@@ -7,6 +7,7 @@ public class PlayerMouvement : MonoBehaviour
     
     [SerializeField] public float movementSpeedMultiplier = 10f;
     [SerializeField] public float slowSpeed = 1f;
+    [SerializeField] public float speedBoostMultiplier = 1f;
     
     [SerializeField] public bool timePaused = false;
 
@@ -28,11 +29,11 @@ public class PlayerMouvement : MonoBehaviour
         Vector3 NewPos = new Vector3(0, 0, 0);
         if (timePaused)
         {
-            NewPos = new Vector3(_playerInputs.moveInput.x * movementSpeedMultiplier * slowSpeed , transform.position.y, _playerInputs.moveInput.y * movementSpeedMultiplier * slowSpeed) *  Time.unscaledDeltaTime;
+            NewPos = new Vector3(_playerInputs.moveInput.x * movementSpeedMultiplier * slowSpeed , transform.position.y, _playerInputs.moveInput.y * movementSpeedMultiplier * slowSpeed * speedBoostMultiplier) *  Time.unscaledDeltaTime;
         }
         else
         {
-            NewPos = new Vector3(_playerInputs.moveInput.x * movementSpeedMultiplier * slowSpeed , transform.position.y, _playerInputs.moveInput.y * movementSpeedMultiplier * slowSpeed) * Time.deltaTime;
+            NewPos = new Vector3(_playerInputs.moveInput.x * movementSpeedMultiplier * slowSpeed , transform.position.y, _playerInputs.moveInput.y * movementSpeedMultiplier * slowSpeed * speedBoostMultiplier) * Time.deltaTime;
         }
         
         if (_boundaries.CheckBoundaries(transform.position + NewPos))

@@ -3,6 +3,7 @@ using UnityEngine;
 public class SecondaryAttack : MonoBehaviour
 {
     private Stats stats;
+    private Shoot _shoot;
     
     [SerializeField] public GameObject secondaryAttack1;
     [SerializeField] public float delaySecondaryAttack1 = 1.5f;
@@ -14,6 +15,7 @@ public class SecondaryAttack : MonoBehaviour
     private void Start()
     {
         stats = GetComponent<Stats>();
+        _shoot = GetComponent<Shoot>();
         timerAttack1 = delaySecondaryAttack1;
         timerAttack2 = delaySecondaryAttack2;
     }
@@ -74,7 +76,7 @@ public class SecondaryAttack : MonoBehaviour
             timerAttack1 = 0;
             return true;
         }
-        timerAttack1 += Time.unscaledDeltaTime;
+        timerAttack1 += Time.unscaledDeltaTime * _shoot.attackSpeedBoostMultiplier;
         return false;
     }
 
@@ -85,7 +87,7 @@ public class SecondaryAttack : MonoBehaviour
             timerAttack2 = 0;
             return true;
         }
-        timerAttack2 += Time.unscaledDeltaTime;
+        timerAttack2 += Time.unscaledDeltaTime * _shoot.attackSpeedBoostMultiplier;
         return false;
     }
     

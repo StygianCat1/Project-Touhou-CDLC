@@ -39,6 +39,7 @@ public class Stats : MonoBehaviour
     [SerializeField] public int hilScore;
     
     [SerializeField] public int currentHealth = 3;
+    [SerializeField] public float invulnerabilityTime = 2f;
     [SerializeField] public int currentBomb = 3;
     [SerializeField] public int continueNbr = 3;
 
@@ -52,6 +53,14 @@ public class Stats : MonoBehaviour
         {
             currentHealth = Mathf.Clamp(value, 0, 8);
             gUI.GetComponent<PlayerInfo_GUI>().UpdateHealth(health);
+            if (health <= 0)
+            {
+                // script to make character explode and ask if want to continue
+            }
+            else
+            {
+                LosePower();
+            }
         }
     }
 
@@ -118,24 +127,6 @@ public class Stats : MonoBehaviour
         gameUI = GameObject.FindGameObjectWithTag("GUI");
     }
 
-    public void TakeDamage()
-    {
-        health -= 1;
-        if (health <= 0)
-        {
-            // script to make character explode and ask if want to continue
-        }
-        else
-        {
-            LosePower();
-        }
-    }
-
-    public void Heal()
-    {
-        health += 1;
-    }
-
     public void UseBomb()
     {
         bomb -= 1;
@@ -153,6 +144,6 @@ public class Stats : MonoBehaviour
 
     public void LosePower()
     {
-        power = power - Mathf.RoundToInt(power * 0.9f); 
+        //power -= Mathf.RoundToInt(power * 0.9f); 
     }
 }

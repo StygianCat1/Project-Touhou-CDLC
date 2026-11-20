@@ -4,6 +4,7 @@ using UnityEngine.Animations;
 public class PrimaryAttack : MonoBehaviour
 {
     private Stats stats;
+    private Shoot _shoot;
     
     [SerializeField] public GameObject primaryAttack1;
     [SerializeField] public float delayPrimaryAttack1 = 1;
@@ -16,6 +17,7 @@ public class PrimaryAttack : MonoBehaviour
     private void Start()
     {
         stats = GetComponent<Stats>();
+        _shoot = GetComponent<Shoot>();
         timerAttack1 = delayPrimaryAttack1;
         timerAttack2 = delayPrimaryAttack2;
     }
@@ -76,7 +78,7 @@ public class PrimaryAttack : MonoBehaviour
             timerAttack1 = 0;
             return true;
         }
-        timerAttack1 += Time.unscaledDeltaTime;
+        timerAttack1 += Time.unscaledDeltaTime * _shoot.attackSpeedBoostMultiplier;
         return false;
     }
 
@@ -87,7 +89,7 @@ public class PrimaryAttack : MonoBehaviour
             timerAttack2 = 0;
             return true;
         }
-        timerAttack2 += Time.unscaledDeltaTime;
+        timerAttack2 += Time.unscaledDeltaTime * _shoot.attackSpeedBoostMultiplier;
         return false;
     }
 }

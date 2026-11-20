@@ -18,6 +18,7 @@ public class Shoot : MonoBehaviour
     [SerializeField] public GameObject secondaryAttackMuzzle3;
     [SerializeField] public GameObject secondaryAttackMuzzle4;
     [SerializeField] public GameObject secondaryAttackMuzzle5;
+    [SerializeField] public float attackSpeedBoostMultiplier = 1f;
     
     private void Start()
     {

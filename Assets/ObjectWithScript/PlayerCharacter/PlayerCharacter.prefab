@@ -582,6 +582,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeedMultiplier: 25
   slowSpeed: 1
+  timePaused: 0
 --- !u!114 &1551605106931958371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -660,7 +661,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41db3f893ea8f4c48a6036a422e6b84a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterKit: 0
+  characterKit: 1
+  timeStopDuration: 3
+  timeRewindDuration: 5
+  bombProjectileDestructionRange: 15
 --- !u!95 &5129755623955536010
 Animator:
   serializedVersion: 7
