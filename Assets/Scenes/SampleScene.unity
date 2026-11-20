@@ -1135,8 +1135,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6573782989405609904, guid: 8f53ab8aed27a2045a251e69ce3d9395, type: 3}
+      propertyPath: characterKit
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6573782989405609904, guid: 8f53ab8aed27a2045a251e69ce3d9395, type: 3}
       propertyPath: timeStopDuration
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6573782989405609904, guid: 8f53ab8aed27a2045a251e69ce3d9395, type: 3}
+      propertyPath: timeRewindDuration
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6573782989405609904, guid: 8f53ab8aed27a2045a251e69ce3d9395, type: 3}
+      propertyPath: bombProjectileDestructionRange
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7697611610976539456, guid: 8f53ab8aed27a2045a251e69ce3d9395, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7747568573035946354, guid: 8f53ab8aed27a2045a251e69ce3d9395, type: 3}
       propertyPath: m_Name
@@ -1416,7 +1432,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4298658971652044987, guid: 125f11caadebec94aba4df492597dfbc, type: 3}
       propertyPath: m_TagString
-      value: EnemyProjectile
+      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
