@@ -6,6 +6,8 @@ public class PlayerInputs : MonoBehaviour
     private PlayerMouvement _playerMouvement;
     private ApparanceChange _apparanceChange;
     private Shoot _shoot;
+    private Bomb _bomb;
+    private PlayerPause _playerPause;
     
     [SerializeField] public Vector2 moveInput;
     [SerializeField] public bool shotInput;
@@ -24,7 +26,7 @@ public class PlayerInputs : MonoBehaviour
         set
         {
             bombInput = value;
-            BombUsageChange();
+            _bomb.BombExplosion();
         }
     }
 
@@ -39,7 +41,9 @@ public class PlayerInputs : MonoBehaviour
         set
         {
             slowMovementInput = value;
-            SlowMouvementUsageChange();
+            _playerMouvement.ChangeForSlowMovement(slowMovementCheck);
+            _apparanceChange.ChangeApparanceOnSlow(slowMovementCheck);
+            _shoot.MoveSecondaryAttackSocketForFocus(slowMovementCheck);
         }
     }
 
@@ -52,7 +56,17 @@ public class PlayerInputs : MonoBehaviour
         set
         {
             abilityInput = value;
-            AbilityUsageChange();
+        }
+    }
+
+    public bool pauseCheck
+    {
+        get {return pauseInput;}
+        set
+        {
+            pauseInput = value;
+            print("aled");
+            _playerPause.Pause();
         }
     }
     
@@ -63,6 +77,8 @@ public class PlayerInputs : MonoBehaviour
         _playerMouvement = GetComponent<PlayerMouvement>();
         _apparanceChange = GetComponent<ApparanceChange>();
         _shoot = GetComponent<Shoot>();
+        _bomb = GetComponent<Bomb>();
+        _playerPause = GetComponent<PlayerPause>();
 
     }
     
@@ -81,32 +97,16 @@ public class PlayerInputs : MonoBehaviour
         bombCheck = value.isPressed;
     }
 
-    public void BombUsageChange()
-    {
-
-    }
-
     public void OnSlowMovement(InputValue value)
     {
         slowMovementCheck = value.isPressed;
-    }
-    
-    public void SlowMouvementUsageChange()
-    {
-        _playerMouvement.ChangeForSlowMovement(slowMovementCheck);
-        _apparanceChange.ChangeApparanceOnSlow(slowMovementCheck);
-        _shoot.MoveSecondaryAttackSocketForFocus(slowMovementCheck);
     }
 
     public void OnUseActiveCapacity(InputValue value)
     {
         abilityCheck = value.isPressed;
     }
-
-    public void AbilityUsageChange()
-    {
-        
-    }
+    
     
     public void OnSkip(InputValue value)
     {
@@ -115,7 +115,7 @@ public class PlayerInputs : MonoBehaviour
     
     public void OnPaused(InputValue value)
     {
-        pauseInput = value.isPressed;
+        pauseCheck = value.isPressed;
     }
 }
 

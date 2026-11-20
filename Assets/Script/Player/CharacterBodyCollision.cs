@@ -22,7 +22,7 @@ public class CharacterBodyCollision : MonoBehaviour
         if (other.gameObject.GetComponent<CollectibleType>() != null)
         {
             other.gameObject.GetComponent<CollectibleType>().Collectible(stats);
-            Destroy(other.gameObject, 0.1f);
+            Destroy(other.gameObject);
         }
 
         if (other.gameObject.tag == "EnemyProjectile")

@@ -7,6 +7,8 @@ public class PlayerMouvement : MonoBehaviour
     
     [SerializeField] public float movementSpeedMultiplier = 10f;
     [SerializeField] public float slowSpeed = 1f;
+    
+    [SerializeField] public bool timePaused = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -23,7 +25,16 @@ public class PlayerMouvement : MonoBehaviour
 
     void Mouvement()
     {
-        Vector3 NewPos = new Vector3(_playerInputs.moveInput.x * movementSpeedMultiplier * slowSpeed , transform.position.y, _playerInputs.moveInput.y * movementSpeedMultiplier * slowSpeed) * Time.deltaTime;
+        Vector3 NewPos = new Vector3(0, 0, 0);
+        if (timePaused)
+        {
+            NewPos = new Vector3(_playerInputs.moveInput.x * movementSpeedMultiplier * slowSpeed , transform.position.y, _playerInputs.moveInput.y * movementSpeedMultiplier * slowSpeed) *  Time.unscaledDeltaTime;
+        }
+        else
+        {
+            NewPos = new Vector3(_playerInputs.moveInput.x * movementSpeedMultiplier * slowSpeed , transform.position.y, _playerInputs.moveInput.y * movementSpeedMultiplier * slowSpeed) * Time.deltaTime;
+        }
+        
         if (_boundaries.CheckBoundaries(transform.position + NewPos))
         {
             transform.Translate(NewPos);

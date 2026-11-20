@@ -315,6 +315,17 @@
                 },
                 {
                     "name": "",
+                    "id": "4c88ae29-d9d9-4932-8965-b537cf340563",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Paused",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "ac48799f-ca2e-48ec-b907-80eefe2aaf76",
                     "path": "<Gamepad>/buttonNorth",
                     "interactions": "",

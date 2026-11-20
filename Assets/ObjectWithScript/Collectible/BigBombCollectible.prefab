@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ffbb17ace9f4164dbc77becf3b8c6f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouvementSpeed: 0.15
-  directionChangeSpeed: 0.8
-  angleChangeSpeed: 0.02
-  speedTowardPlayer: 1
+  mouvementSpeed: 15
+  directionChangeSpeed: 1
+  angleChangeSpeed: 2
+  speedTowardPlayer: 100

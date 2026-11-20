@@ -1,12 +1,14 @@
 using System;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Script.Player;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class Stats : MonoBehaviour
 {
+    private Shoot _shootRef;
+    private Bomb _bombRef; 
     private GameObject gUI;
-
     public GameObject gameUI
     {
         get { return gUI; }
@@ -18,6 +20,18 @@ public class Stats : MonoBehaviour
             gUI.GetComponent<PlayerInfo_GUI>().UpdateAllInfos(health, bomb);
             gUI.GetComponent<PlayerStats_GUI>().UpdateAllStats(power,140, graze, points);
             //gUI.GetComponent<Capacity_GUI>();
+        }
+    }
+
+    public KitChoosed kit;
+    public KitChoosed kitchoosed
+    {
+        get{ return kit;}
+        set
+        {
+            kit = value;
+            _shootRef.characterKit = value;
+            _bombRef.characterKit = value;
         }
     }
 
@@ -99,6 +113,8 @@ public class Stats : MonoBehaviour
 
     private void Start()
     {
+        _shootRef = GetComponent<Shoot>();
+        _bombRef = GetComponent<Bomb>();
         gameUI = GameObject.FindGameObjectWithTag("GUI");
     }
 

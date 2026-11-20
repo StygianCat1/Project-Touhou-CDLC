@@ -76,7 +76,7 @@ public class PrimaryAttack : MonoBehaviour
             timerAttack1 = 0;
             return true;
         }
-        timerAttack1 += Time.deltaTime;
+        timerAttack1 += Time.unscaledDeltaTime;
         return false;
     }
 
@@ -87,7 +87,7 @@ public class PrimaryAttack : MonoBehaviour
             timerAttack2 = 0;
             return true;
         }
-        timerAttack2 += Time.deltaTime;
+        timerAttack2 += Time.unscaledDeltaTime;
         return false;
     }
 }

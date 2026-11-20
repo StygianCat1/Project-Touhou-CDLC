@@ -10,6 +10,7 @@ public class Shoot : MonoBehaviour
     private SecondaryAttack _secondaryAttackRef;
     private Animator animator;
 
+    //[HideInInspector] 
     [SerializeField] public KitChoosed characterKit;
     [SerializeField] public GameObject primaryAttackMuzzle;
     [SerializeField] public GameObject secondaryAttackMuzzle1;

@@ -30,8 +30,6 @@ public class CollectibleMouvement : MonoBehaviour
         }
     }
     
-    
-    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Update()
     {
@@ -49,18 +47,18 @@ public class CollectibleMouvement : MonoBehaviour
 
     private void VerticlaMoveCollectible()
     {
-        transform.Translate(new Vector3(0f ,0f , directionref * mouvementSpeed), Space.World);
+        transform.Translate(new Vector3(0f ,0f , directionref * mouvementSpeed * Time.deltaTime), Space.World);
         directionref -= Time.deltaTime * directionChangeSpeed;
     }
 
     private void HorizontalMoveCollectible(float moveAngle)
     {
-        transform.Translate(new Vector3(moveAngle * angleChangeSpeed, 0f, 0f), Space.World);
+        transform.Translate(new Vector3(moveAngle * angleChangeSpeed * Time.deltaTime, 0f, 0f), Space.World);
     }
 
     public void MoveTowardPlayer()
     {
-        transform.position = Vector3.MoveTowards(transform.position, characterRef.transform.position, speedTowardPlayer);
+        transform.position = Vector3.MoveTowards(transform.position, characterRef.transform.position, speedTowardPlayer * Time.deltaTime);
         if (!moveToPlayer)
         {
             moveToPlayer = true;
