@@ -53,7 +53,7 @@ public class WaveScript : MonoBehaviour
         {
             if (waveRounds[waveIndex + 1].waveType == WaveType.NormalEnemy)
             {
-                print("trying invoke");
+                //print("trying invoke");
                 Invoke( nameof(BeginWave), waveRounds[waveIndex].timeBetweenWaves +  (waveRounds[waveIndex].wave.Count * timeBetweenEnemies));
                  
                 waveIndex += 1;
@@ -73,7 +73,7 @@ public class WaveScript : MonoBehaviour
     {
         for (int i = 0; i < waveRounds[waveIndex].wave.Count; i++)
         {
-            print(i + "hello" + waveIndex);
+            //print(i + "hello" + waveIndex);
             
             yield return new WaitForSeconds(timeBetweenEnemies);
         }
@@ -87,7 +87,7 @@ public class WaveScript : MonoBehaviour
         GameObject[] collectibles = GameObject.FindGameObjectsWithTag("Collectible");
         if (enemies.Length == 0 && enemiesProjectiles .Length == 0  && collectibles .Length == 0)
         {
-            print("spawnBoss");
+            //print("spawnBoss");
             //make boss spawn 
             return;
         }
@@ -98,7 +98,7 @@ public class WaveScript : MonoBehaviour
         }
         else
         {
-            print("spawnBoss");
+            //print("spawnBoss");
             //make boss spawn
         }
     }

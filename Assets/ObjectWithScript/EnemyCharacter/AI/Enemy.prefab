@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 1187626735692752621}
   - component: {fileID: 8961414584646409177}
   - component: {fileID: 38874603753819277}
+  - component: {fileID: 230303584347556275}
+  - component: {fileID: 8184960044180482146}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -108,3 +110,40 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &230303584347556275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4298658971652044987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 598f204e950918446afca28684c5ef1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropCollectibles:
+  - collectiblePrefab: {fileID: 6581181297074061766, guid: 0c5f01f530bb66f4f9dd01ca8df59635, type: 3}
+    dropPercentage: 50
+  - collectiblePrefab: {fileID: 6581181297074061766, guid: 43eea575e3ba2f743b98d9692de6b51a, type: 3}
+    dropPercentage: 40
+  - collectiblePrefab: {fileID: 6581181297074061766, guid: 988292177ed851340b5224847e945636, type: 3}
+    dropPercentage: 20
+  - collectiblePrefab: {fileID: 6581181297074061766, guid: c19a90dddade9e247b434f5f0f2692d7, type: 3}
+    dropPercentage: 0
+  - collectiblePrefab: {fileID: 6581181297074061766, guid: e37d1f31242d92d49ae182d8a03b3dda, type: 3}
+    dropPercentage: 0
+--- !u!114 &8184960044180482146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4298658971652044987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9f76c119c8b4114a9eb4c20ed3f4482, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  maxHealth: 100

@@ -10,8 +10,12 @@ public class PlayerBulletCollision : MonoBehaviour
         _playerProjectileDamage = GetComponent<PlayerProjectileDamage>();
     }
 
-    public void OnCollisionEnter(UnityEngine.Collision other)
+    public void OnTriggerEnter(Collider other)
     {
-        //do something like deal damage and play sound + destroy
+        if (other.tag == "Enemy")
+        {
+            other.GetComponent<EnemyStats>().currentHealth -= _playerProjectileDamage.totalDamage;
+            Destroy(gameObject);
+        }
     }
 }

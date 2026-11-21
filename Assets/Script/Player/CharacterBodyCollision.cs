@@ -25,7 +25,7 @@ public class CharacterBodyCollision : MonoBehaviour
             Destroy(other.gameObject);
         }
 
-        if (other.gameObject.tag == "EnemyProjectile")
+        if (other.tag == "Enemy" || other.tag == "EnemyProjectile")
         {
             closeProjectiles.Add(other.gameObject);
         }

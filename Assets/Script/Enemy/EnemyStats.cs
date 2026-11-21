@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class EnemyStats : MonoBehaviour
 {
+    private EnemyDeath _deathScript;
     
     [SerializeField] public float health;
     [SerializeField] public float maxHealth;
@@ -13,9 +14,10 @@ public class EnemyStats : MonoBehaviour
         set
         {
             health = Mathf.Clamp(value, 0, maxHealth);
-            if (health == 0)
+            if (health <= 0)
             {
-                //do event to make enemy die
+                print("enemy died");
+                _deathScript.DropOnDeath();
             }
         }
     }
@@ -23,19 +25,7 @@ public class EnemyStats : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
+        _deathScript = GetComponent<EnemyDeath>();
         health = maxHealth;
-    }
-
-    private void Death()
-    {
-        CreateCollectible();
-        //Play sound on destroy
-        //Add particle effect
-        Destroy(gameObject,0.1f);
-    }
-
-    private void CreateCollectible()
-    {
-        
     }
 }
