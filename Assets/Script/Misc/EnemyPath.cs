@@ -10,17 +10,16 @@ public class EnemyPath : MonoBehaviour
     
     private void Update()
     {
-        if (needDebug)
-        {
-            DebugLineTrace();
-        }
+        //if (needDebug)
+        //{
+        //    DebugLineTrace();
+        //}
     }
 
     private void DebugLineTrace()
     {
         for (int i = 0; i < waypoints.Count-2; i++)
         {
-            print("line traced");
             Debug.DrawLine(waypoints[i].transform.position, waypoints[i+1].transform.position, Color.red);
         }
     }

@@ -7,6 +7,8 @@ public class EnemyStats : MonoBehaviour
     [SerializeField] public float health;
     [SerializeField] public float maxHealth;
     
+    
+    [SerializeField] public EnemyPath pathToFolloww;
     [SerializeField] public float speed = 10f;
 
     [SerializeField]
@@ -15,7 +17,6 @@ public class EnemyStats : MonoBehaviour
         get { return health; }
         set
         {
-            health = Mathf.Clamp(value, 0, maxHealth);
             if (health <= 0)
             {
                 print("enemy died");
@@ -28,6 +29,11 @@ public class EnemyStats : MonoBehaviour
     private void Start()
     {
         _deathScript = GetComponent<EnemyDeath>();
-        health = maxHealth;
+    }
+
+    public void ChangeHealthValue(float value)
+    {
+        health  = value;
+        maxHealth = health;
     }
 }
