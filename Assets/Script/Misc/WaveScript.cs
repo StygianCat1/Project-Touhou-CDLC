@@ -51,6 +51,11 @@ public class WaveScript : MonoBehaviour
 
         if (waveRounds[waveIndex].waveType == WaveType.NormalEnemy)
         {
+            if (waveRounds.Count - 1 == waveIndex)
+            {
+                print("is the last wave");
+                return;
+            }
             if (waveRounds[waveIndex + 1].waveType == WaveType.NormalEnemy)
             {
                 //print("trying invoke");

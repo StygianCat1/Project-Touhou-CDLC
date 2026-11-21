@@ -6,6 +6,8 @@ public class EnemyStats : MonoBehaviour
     
     [SerializeField] public float health;
     [SerializeField] public float maxHealth;
+    
+    [SerializeField] public float speed = 10f;
 
     [SerializeField]
     public float currentHealth

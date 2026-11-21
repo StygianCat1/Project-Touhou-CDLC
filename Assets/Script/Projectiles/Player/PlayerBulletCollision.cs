@@ -4,6 +4,8 @@ using UnityEngine;
 public class PlayerBulletCollision : MonoBehaviour
 {
     private PlayerProjectileDamage _playerProjectileDamage;
+
+    [SerializeField] public bool isGiantProjectile;
     
     private void Start()
     {
@@ -15,7 +17,10 @@ public class PlayerBulletCollision : MonoBehaviour
         if (other.tag == "Enemy")
         {
             other.GetComponent<EnemyStats>().currentHealth -= _playerProjectileDamage.totalDamage;
-            Destroy(gameObject);
+            if (!isGiantProjectile)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }

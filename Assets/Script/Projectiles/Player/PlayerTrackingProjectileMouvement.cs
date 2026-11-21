@@ -9,7 +9,7 @@ public class PlayerTrackingProjectileMouvement : MonoBehaviour
     private void Start()
     {
         SearchForTarget();
-        Destroy(gameObject, 2f);
+        Destroy(gameObject, 3f);
     }
 
     private void Update()

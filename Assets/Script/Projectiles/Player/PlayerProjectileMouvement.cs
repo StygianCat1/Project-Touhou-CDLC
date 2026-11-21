@@ -6,7 +6,7 @@ public class PlayerProjectileMouvement : MonoBehaviour
 
     private void Start()
     {
-        Destroy(gameObject, 1.5f);
+        Destroy(gameObject, 6f);
     }
 
     private void Update()
