@@ -12,10 +12,11 @@ GameObject:
   - component: {fileID: 5786816958444334302}
   - component: {fileID: 5732743745574752877}
   - component: {fileID: 612538845140484103}
-  - component: {fileID: 8199002874938101492}
+  - component: {fileID: 2351768256838154615}
+  - component: {fileID: 5688302638149822073}
   m_Layer: 0
   m_Name: Boss
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,8 +30,8 @@ Transform:
   m_GameObject: {fileID: 4028724785912405094}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 103.851494, y: -103.61888, z: 44.515873}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -109,7 +110,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8199002874938101492
+--- !u!114 &2351768256838154615
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -118,10 +119,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 4028724785912405094}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9f76c119c8b4114a9eb4c20ed3f4482, type: 3}
+  m_Script: {fileID: 11500000, guid: 742cf25a22e482e4b8a9bde0f9fa559b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1000
-  maxHealth: 1000
-  pathToFolloww: {fileID: 0}
+  waveScript: {fileID: 0}
+  health: 0
+  maxHealth: 0
+  nbrOfLife: 1
+  listOfBossDropPerLife:
+  - bossDropPerLife: []
   speed: 10
+  pathToFollow: {fileID: 0}
+--- !u!114 &5688302638149822073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4028724785912405094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 980a7be5f45ae4e43bdae432c0f4e273, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canMove: 1

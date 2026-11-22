@@ -31,7 +31,7 @@ public class EnemyMouvement : MonoBehaviour
     {
         stats = GetComponent<EnemyStats>();
         shoot = GetComponent<EnemyShoot>();
-        waypointsList = stats.pathToFolloww.waypoints;
+        waypointsList = stats.pathToFollow.waypoints;
     }
 
     private void Update()

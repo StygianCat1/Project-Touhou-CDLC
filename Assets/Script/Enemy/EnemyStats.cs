@@ -8,7 +8,7 @@ public class EnemyStats : MonoBehaviour
     [SerializeField] public float maxHealth;
     
     
-    [SerializeField] public EnemyPath pathToFolloww;
+    [SerializeField] public EnemyPath pathToFollow;
     [SerializeField] public float speed = 10f;
 
     [SerializeField]

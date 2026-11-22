@@ -16,10 +16,21 @@ public class PlayerBulletCollision : MonoBehaviour
     {
         if (other.tag == "Enemy")
         {
-            other.GetComponent<EnemyStats>().currentHealth -= _playerProjectileDamage.totalDamage;
-            if (!isGiantProjectile)
+            if (other.GetComponent<EnemyStats>().currentHealth != null)
             {
-                Destroy(gameObject);
+                other.GetComponent<EnemyStats>().currentHealth -= _playerProjectileDamage.totalDamage;
+                if (!isGiantProjectile)
+                {
+                    Destroy(gameObject);
+                }
+            }
+            if (other.GetComponent<BossStats>() != null)
+            {
+                other.GetComponent<BossStats>().currentHealth -= _playerProjectileDamage.totalDamage;
+                if (!isGiantProjectile)
+                {
+                    Destroy(gameObject);
+                }
             }
         }
     }

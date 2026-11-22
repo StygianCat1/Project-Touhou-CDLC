@@ -94,7 +94,7 @@ public class WaveScript : MonoBehaviour
             {
                 GameObject enemyRef = Instantiate(waveRounds[waveIndex].wave[enemyIndex].enemyPrefab, waveRounds[waveIndex].path.waypoints[0].transform.position, waveRounds[waveIndex].path.waypoints[0].transform.rotation);
                 EnemyStats stats = enemyRef.GetComponent<EnemyStats>();
-                stats.pathToFolloww = waveRounds[waveIndex].path;
+                stats.pathToFollow = waveRounds[waveIndex].path;
                 stats.ChangeHealthValue(waveRounds[waveIndex].wave[enemyIndex].enemyHealth);
                 enemyIndex += 1;
                 yield return new WaitForSeconds(timeBetweenEnemies);
@@ -112,8 +112,12 @@ public class WaveScript : MonoBehaviour
         GameObject[] collectibles = GameObject.FindGameObjectsWithTag("Collectible");
         if (enemies.Length == 0 && enemiesProjectiles .Length == 0  && collectibles .Length == 0)
         {
-            print("spawn boss");
-            BossDefeated();
+            enemyIndex = 0;
+            GameObject boss = Instantiate(waveRounds[waveIndex].wave[enemyIndex].enemyPrefab, waveRounds[waveIndex].path.waypoints[0].transform.position, waveRounds[waveIndex].path.waypoints[0].transform.rotation);
+            BossStats stats = boss.GetComponent<BossStats>();
+            stats.pathToFollow = waveRounds[waveIndex].path;
+            stats.ChangeHealthValue(waveRounds[waveIndex].wave[enemyIndex].enemyHealth);
+            stats.waveScript = this;
             return;
         }
         if (security <= 8)
@@ -135,9 +139,12 @@ public class WaveScript : MonoBehaviour
             {
                 Destroy(collectible);
             }
-            
-            print("spawn boss");
-            BossDefeated();
+            GameObject boss = Instantiate(waveRounds[waveIndex].wave[enemyIndex].enemyPrefab, transform.position, transform.rotation);
+            BossStats stats = boss.GetComponent<BossStats>();
+            stats.pathToFollow = waveRounds[waveIndex].path;
+            stats.ChangeHealthValue(waveRounds[waveIndex].wave[enemyIndex].enemyHealth);
+            stats.waveScript = this;print("spawn boss");
+            //BossDefeated();
         }
     }
     
