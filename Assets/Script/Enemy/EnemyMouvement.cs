@@ -7,6 +7,9 @@ public class EnemyMouvement : MonoBehaviour
     private EnemyShoot shoot;
     private List<GameObject> waypointsList;
     private int waypointIndex;
+    private bool mouvementStopped;
+    
+    [SerializeField][Range(0,20)] public float waitTime;
 
     public int waypointPos
     {
@@ -14,7 +17,11 @@ public class EnemyMouvement : MonoBehaviour
         set
         {
             waypointIndex = value;
-            if (value == 2){print("hello");}
+            if (value == 2)
+            {
+                
+                shoot.Shoot(); StopMouvement();
+            }
             if (value == waypointsList.Count){Destroy(gameObject);}
         }
     }
@@ -34,10 +41,27 @@ public class EnemyMouvement : MonoBehaviour
 
     private void MoveTowardNextWaypoint()
     {
-        transform.position = Vector3.MoveTowards(transform.position, waypointsList[waypointIndex].transform.position, stats.speed * Time.deltaTime);
-        if (Vector3.Distance(transform.position, waypointsList[waypointPos].transform.position) < 0.1f)
+        if (!mouvementStopped)
         {
-            waypointPos += 1;
+            transform.position = Vector3.MoveTowards(transform.position, waypointsList[waypointIndex].transform.position, stats.speed * Time.deltaTime);
+            if (Vector3.Distance(transform.position, waypointsList[waypointPos].transform.position) < 0.1f)
+            {
+                waypointPos += 1;
+            }
         }
+    }
+
+    private void StopMouvement()
+    {
+        if (waitTime > 0)
+        {
+            mouvementStopped = true;
+            Invoke(nameof(ContinueMouvement), waitTime);
+        }
+    }
+
+    private void ContinueMouvement()
+    {
+        mouvementStopped = false;
     }
 }
