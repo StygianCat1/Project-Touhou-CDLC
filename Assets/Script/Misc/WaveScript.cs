@@ -107,12 +107,12 @@ public class WaveScript : MonoBehaviour
     private void CheckForBoss()
     {
         print("is checking for boss");
+        enemyIndex = 0;
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         GameObject[] enemiesProjectiles = GameObject.FindGameObjectsWithTag("EnemyProjectile");
         GameObject[] collectibles = GameObject.FindGameObjectsWithTag("Collectible");
         if (enemies.Length == 0 && enemiesProjectiles .Length == 0  && collectibles .Length == 0)
         {
-            enemyIndex = 0;
             GameObject boss = Instantiate(waveRounds[waveIndex].wave[enemyIndex].enemyPrefab, waveRounds[waveIndex].path.waypoints[0].transform.position, waveRounds[waveIndex].path.waypoints[0].transform.rotation);
             BossStats stats = boss.GetComponent<BossStats>();
             stats.pathToFollow = waveRounds[waveIndex].path;
@@ -139,12 +139,11 @@ public class WaveScript : MonoBehaviour
             {
                 Destroy(collectible);
             }
-            GameObject boss = Instantiate(waveRounds[waveIndex].wave[enemyIndex].enemyPrefab, transform.position, transform.rotation);
+            GameObject boss = Instantiate(waveRounds[waveIndex].wave[enemyIndex].enemyPrefab, waveRounds[waveIndex].path.waypoints[0].transform.position, waveRounds[waveIndex].path.waypoints[0].transform.rotation);
             BossStats stats = boss.GetComponent<BossStats>();
             stats.pathToFollow = waveRounds[waveIndex].path;
             stats.ChangeHealthValue(waveRounds[waveIndex].wave[enemyIndex].enemyHealth);
-            stats.waveScript = this;print("spawn boss");
-            //BossDefeated();
+            stats.waveScript = this;
         }
     }
     

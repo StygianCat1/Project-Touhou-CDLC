@@ -17,6 +17,7 @@ public class EnemyStats : MonoBehaviour
         get { return health; }
         set
         {
+            health = value;
             if (health <= 0)
             {
                 print("enemy died");

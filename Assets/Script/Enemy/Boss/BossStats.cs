@@ -15,7 +15,7 @@ public class BossStats : MonoBehaviour
     
     [SerializeField] public float health;
     [SerializeField] public float maxHealth;
-    [SerializeField][Range(1,5)][Tooltip("Put as many life as the lenght of the list of drops and vice versa")] public int nbrOfLife;
+    [SerializeField][Tooltip("Put as many life as the lenght of the list of drops + 1 and vice versa")] public int nbrOfLife;
     [SerializeField] public List<bossDropPerDeath> listOfBossDropPerLife;
     
     [SerializeField] public float speed = 10f;
@@ -27,19 +27,21 @@ public class BossStats : MonoBehaviour
         get { return health; }
         set
         {
+            health = value;
             if (health <= 0)
             {
-                if (nbrOfLife < 0)
+                if (nbrOfLife <= 0)
                 {
                     DestroyAllProjectiles();
                     DropCollectibleOnLifeLost();
                     waveScript.BossDefeated();
+                    Destroy(gameObject);
                     return;
                 }
-
                 DestroyAllProjectiles();
                 DropCollectibleOnLifeLost();
                 nbrOfLife -= 1 ;
+                currentHealth = maxHealth;
             }
         }
     }
@@ -58,7 +60,11 @@ public class BossStats : MonoBehaviour
 
     private void DropCollectibleOnLifeLost()
     {
-        foreach (GameObject collectible in listOfBossDropPerLife[nbrOfLife - 1].bossDropPerLife)
+        if (listOfBossDropPerLife.Count == 0)
+        {
+            return;
+        }
+        foreach (GameObject collectible in listOfBossDropPerLife[nbrOfLife].bossDropPerLife)
         {
             Instantiate(collectible, transform.position, Quaternion.identity);
         }
@@ -66,7 +72,11 @@ public class BossStats : MonoBehaviour
 
     private void DestroyAllProjectiles()
     {
-        GameObject[] projectiles = GameObject.FindGameObjectsWithTag("Projectile");
+        GameObject[] projectiles = GameObject.FindGameObjectsWithTag("EnemyProjectile");
+        if (projectiles.Length == 0)
+        {
+            return;
+        }
         foreach (GameObject projectile in projectiles)
         {
             Destroy(projectile);

@@ -127,7 +127,14 @@ MonoBehaviour:
   maxHealth: 0
   nbrOfLife: 1
   listOfBossDropPerLife:
-  - bossDropPerLife: []
+  - bossDropPerLife:
+    - {fileID: 6581181297074061766, guid: 43eea575e3ba2f743b98d9692de6b51a, type: 3}
+    - {fileID: 6581181297074061766, guid: 43eea575e3ba2f743b98d9692de6b51a, type: 3}
+    - {fileID: 6581181297074061766, guid: 988292177ed851340b5224847e945636, type: 3}
+  - bossDropPerLife:
+    - {fileID: 6581181297074061766, guid: 988292177ed851340b5224847e945636, type: 3}
+    - {fileID: 6581181297074061766, guid: 988292177ed851340b5224847e945636, type: 3}
+    - {fileID: 6581181297074061766, guid: 43eea575e3ba2f743b98d9692de6b51a, type: 3}
   speed: 10
   pathToFollow: {fileID: 0}
 --- !u!114 &5688302638149822073
@@ -142,4 +149,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 980a7be5f45ae4e43bdae432c0f4e273, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canMove: 1
