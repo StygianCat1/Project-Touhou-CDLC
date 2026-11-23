@@ -2,10 +2,9 @@ namespace DefaultNamespace
 {
     public enum EnemyProjectileType
     {
-        StraightConstantSpeed,
-        StraightAcceleratingSpeed,
-        CurvingConstantSpeed,
-        CurvingAcceleratingSpeed,
+        Straight,
+        CurvingRight,
+        CurvingLeft,
         Falling,
     }
 }
