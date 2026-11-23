@@ -8,6 +8,8 @@ public class PlayerInputs : MonoBehaviour
     private Shoot _shoot;
     private Bomb _bomb;
     private PlayerPause _playerPause;
+    private ActiveFasterShootingSpeed _activeFasterShooting;
+    private ActiveMegaProjectile _activeMegaProjectile;
     
     [SerializeField] public Vector2 moveInput;
     [SerializeField] public bool shotInput;
@@ -56,6 +58,8 @@ public class PlayerInputs : MonoBehaviour
         set
         {
             abilityInput = value;
+            if (_activeFasterShooting.isActiveAndEnabled){_activeFasterShooting.BoostShootSpeed();}
+            if (_activeMegaProjectile.isActiveAndEnabled){_activeMegaProjectile.ShootMegaprojectile();}
         }
     }
 
@@ -79,6 +83,8 @@ public class PlayerInputs : MonoBehaviour
         _shoot = GetComponent<Shoot>();
         _bomb = GetComponent<Bomb>();
         _playerPause = GetComponent<PlayerPause>();
+        _activeFasterShooting = GetComponent<ActiveFasterShootingSpeed>();
+        _activeMegaProjectile = GetComponent<ActiveMegaProjectile>();
 
     }
     

@@ -14,12 +14,13 @@ public class EquipementArmorProtetion : MonoBehaviour
         _stats = GetComponent<Stats>();
     }
 
-    private void CheckIfTakeDamage()
+    public bool CheckIfTakeDamage()
     {
         int currentNumber = Random.Range(0, maxRandomNumber);
         if (currentNumber == 8)
         {
-            //Make it so that the character does no take damage
+            return true;
         }
+        return false;
     }
 }

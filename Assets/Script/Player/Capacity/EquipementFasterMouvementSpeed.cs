@@ -12,9 +12,10 @@ public class EquipementFasterMouvementSpeed : MonoBehaviour
     void Start()
     {
         _playerMouvement = GetComponent<PlayerMouvement>();
+        MoveFaster();
     }
 
-    public void AddInvulnerabilityTime()
+    public void MoveFaster()
     {
         _playerMouvement.speedBoostMultiplier = boostMouvementSpeed;
     }

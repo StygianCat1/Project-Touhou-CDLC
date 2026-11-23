@@ -11,11 +11,13 @@ public class ActiveFasterShootingSpeed : MonoBehaviour
     [SerializeField] public bool isBoosted = false;
     
     private float boostTimer = 0f;
+    private float  normalAttackSpeed;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        _shoot.GetComponent<Shoot>();
+        _shoot = GetComponent<Shoot>();
+        normalAttackSpeed = _shoot.attackSpeedBoostMultiplier;
     }
 
     // Update is called once per frame
@@ -28,14 +30,14 @@ public class ActiveFasterShootingSpeed : MonoBehaviour
     }
     
     public void BoostShootSpeed()
-    {
+    { ;
         _shoot.attackSpeedBoostMultiplier = 2f;
         isBoosted = true;
     }
 
     public void StopBoost()
     {
-        _shoot.attackSpeedBoostMultiplier = 2f;
+        _shoot.attackSpeedBoostMultiplier = normalAttackSpeed;
     }
 
     private void Boosttimer()

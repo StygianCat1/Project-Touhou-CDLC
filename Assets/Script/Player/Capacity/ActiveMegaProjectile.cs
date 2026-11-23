@@ -17,6 +17,7 @@ public class ActiveMegaProjectile : MonoBehaviour
 
     public void ShootMegaprojectile()
     {
-        Instantiate(MegaProjectilePrefab, _shoot.primaryAttackMuzzle.transform.position, _shoot.primaryAttackMuzzle.transform.rotation);
+        GameObject shot = Instantiate(MegaProjectilePrefab, _shoot.primaryAttackMuzzle.transform.position, _shoot.primaryAttackMuzzle.transform.rotation);
+        shot.GetComponent<PlayerProjectileDamage>().stats = GetComponent<Stats>();
     }
 }

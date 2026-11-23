@@ -11,10 +11,12 @@ public class PassiveRepetitiveHeartGain : MonoBehaviour
     private void Start()
     {
         stats = GetComponent<Stats>();
+        Giveheal();
     }
 
     public void Giveheal()
     {
+        print("Give heal");
         stats.health += healCapacity;
     }
 }

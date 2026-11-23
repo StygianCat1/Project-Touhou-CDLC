@@ -11,6 +11,7 @@ public class PassiveRepetitiveBombGain : MonoBehaviour
     private void Start()
     {
         stats = GetComponent<Stats>();
+        Givebomb();
     }
 
     public void Givebomb()

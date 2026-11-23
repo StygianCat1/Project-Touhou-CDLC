@@ -8,6 +8,7 @@ public class Stats : MonoBehaviour
 {
     private Shoot _shootRef;
     private Bomb _bombRef; 
+    private EquipementArmorProtetion _equipementArmorProtetionRef;
     private GameObject gUI;
     public GameObject gameUI
     {
@@ -51,6 +52,13 @@ public class Stats : MonoBehaviour
         }
         set 
         {
+            if (value < currentHealth && _equipementArmorProtetionRef.isActiveAndEnabled)
+            {
+                if (_equipementArmorProtetionRef.CheckIfTakeDamage())
+                {
+                    return;
+                }
+            }
             currentHealth = Mathf.Clamp(value, 0, 8);
             gUI.GetComponent<PlayerInfo_GUI>().UpdateHealth(health);
             if (health <= 0)
@@ -123,7 +131,8 @@ public class Stats : MonoBehaviour
     private void Start()
     {
         _shootRef = GetComponent<Shoot>();
-        _bombRef = GetComponent<Bomb>();
+        _bombRef = GetComponent<Bomb>(); 
+        _equipementArmorProtetionRef = GetComponent<EquipementArmorProtetion>();
         gameUI = GameObject.FindGameObjectWithTag("GUI");
     }
 
