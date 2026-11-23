@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Script.Enemy.Boss;
 using UnityEngine;
 
 [System.Serializable]
@@ -11,6 +12,8 @@ public class bossDropPerDeath
 
 public class BossStats : MonoBehaviour
 {
+    private BossAttack attacktype;
+    
     [SerializeField] public WaveScript waveScript;
     
     [SerializeField] public float health;
@@ -41,6 +44,8 @@ public class BossStats : MonoBehaviour
                 DestroyAllProjectiles();
                 DropCollectibleOnLifeLost();
                 nbrOfLife -= 1 ;
+                attacktype.bossPatternIndex = nbrOfLife - 1;
+                attacktype.stopAttack = true;
                 currentHealth = maxHealth;
             }
         }
@@ -49,7 +54,7 @@ public class BossStats : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
-        
+        attacktype = GetComponent<BossAttack>();
     }
 
     public void ChangeHealthValue(float value)

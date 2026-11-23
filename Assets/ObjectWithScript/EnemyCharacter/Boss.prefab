@@ -1,5 +1,37 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &336282849175870326
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6187950306248497936}
+  m_Layer: 0
+  m_Name: MuzzleAdjust
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6187950306248497936
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 336282849175870326}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8527241136735724515}
+  m_Father: {fileID: 5734356385285020326}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4028724785912405094
 GameObject:
   m_ObjectHideFlags: 0
@@ -14,6 +46,7 @@ GameObject:
   - component: {fileID: 612538845140484103}
   - component: {fileID: 2351768256838154615}
   - component: {fileID: 5688302638149822073}
+  - component: {fileID: 8181141032836856721}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Enemy
@@ -33,7 +66,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 6187950306248497936}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5786816958444334302
@@ -149,3 +183,58 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 980a7be5f45ae4e43bdae432c0f4e273, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8181141032836856721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4028724785912405094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1231ce7a3b2816e48bcfb41b57c69c7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bossAttackPattern:
+  - BossAttackType: 6
+    numberOfShot: 3
+    numberOfBulletPerShot: 12
+    timeBetweenShots: 0.1
+    projectile1Prefab: {fileID: 2219929576886428445, guid: 4445e969f20d7b54f875818f63185a90, type: 3}
+    projectile2Prefab: {fileID: 0}
+  bulletSpawn: {fileID: 7131005161442584810}
+  spawnAdjust: {fileID: 336282849175870326}
+  stageLenght: {fileID: 0}
+  bossPatternIndex: 0
+  stopAttack: 0
+--- !u!1 &7131005161442584810
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8527241136735724515}
+  m_Layer: 0
+  m_Name: Muzzle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8527241136735724515
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7131005161442584810}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6187950306248497936}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

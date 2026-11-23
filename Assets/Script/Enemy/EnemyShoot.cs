@@ -46,7 +46,6 @@ public class EnemyShoot : MonoBehaviour
 
     private void BaseRadialShot()
     {
-        
         if (indexOfShot < numberOfShot)
         {
             float angleStep = 360 / numberOfBulletPerShot;

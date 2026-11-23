@@ -42,6 +42,8 @@ public class WaveScript : MonoBehaviour
     [SerializeField] public List<WaveRound> waveRounds;
     //An int that tell how many seconds the wave have to wait before spawning a new enemy (time between enemy spawn)
     [SerializeField] public float timeBetweenEnemies = 0.8f;
+    
+    [SerializeField] public StageLenght stageLenghtRefForBosses;
 
     //Private int to keep track of the waveRound list index
     private int waveIndex = 0;
@@ -118,6 +120,8 @@ public class WaveScript : MonoBehaviour
             stats.pathToFollow = waveRounds[waveIndex].path;
             stats.ChangeHealthValue(waveRounds[waveIndex].wave[enemyIndex].enemyHealth);
             stats.waveScript = this;
+            BossAttack attack = boss.GetComponent<BossAttack>();
+            attack.stageLenght = stageLenghtRefForBosses;
             return;
         }
         if (security <= 8)
@@ -144,6 +148,8 @@ public class WaveScript : MonoBehaviour
             stats.pathToFollow = waveRounds[waveIndex].path;
             stats.ChangeHealthValue(waveRounds[waveIndex].wave[enemyIndex].enemyHealth);
             stats.waveScript = this;
+            BossAttack attack = boss.GetComponent<BossAttack>();
+            attack.stageLenght = stageLenghtRefForBosses;
         }
     }
     

@@ -4,6 +4,7 @@ using UnityEngine;
 public class BossMouvement : MonoBehaviour
 {
     private BossStats bossStats;
+    private BossAttack bossAttacks;
     private List<GameObject> waypointsList;
     
     private bool canMove = true;
@@ -30,6 +31,7 @@ public class BossMouvement : MonoBehaviour
     void Start()
     {
         bossStats = GetComponent<BossStats>();
+        bossAttacks = GetComponent<BossAttack>();
         waypointsList = bossStats.pathToFollow.waypoints;
 
     }
@@ -61,10 +63,15 @@ public class BossMouvement : MonoBehaviour
         {
             print("got ot random waypoint");
             Move = false;
-            print("say to other script that can attack");
+            bossAttacks.Attack();
             return;
         }
         transform.position = Vector3.MoveTowards(transform.position, randomWaypoint.transform.position, bossStats.speed * Time.deltaTime);
+    }
+
+    public void ReshufflePos()
+    {
+        randomDone = false;
     }
 
     private void MovemenToFirstWaypoint(GameObject target)

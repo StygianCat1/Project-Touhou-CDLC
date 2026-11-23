@@ -17,7 +17,7 @@ public class EnemyProjectileMouvement : MonoBehaviour
         {
             attackSpeed += Random.Range(-0.5f, 0.5f); 
         }
-        Destroy(gameObject, 6f);
+        Destroy(gameObject, 20f);
     }
 
     private void Update()
