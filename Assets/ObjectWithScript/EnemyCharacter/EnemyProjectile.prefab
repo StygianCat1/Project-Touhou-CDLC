@@ -121,6 +121,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c66f7f50dc82d7444baf18db04791f6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectileType: 0
   attackSpeed: 10
+  degreeOfRotationOnCurve: 0.3
   direction: {x: 0, y: 0, z: 1}
   disorder: 0

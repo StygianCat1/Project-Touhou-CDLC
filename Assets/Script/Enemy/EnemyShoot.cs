@@ -79,16 +79,13 @@ public class EnemyShoot : MonoBehaviour
     {
         if (indexOfShot < numberOfShot)
         {
-            
             float angleStep = 90 / numberOfBulletPerShot;
-            
             for (int i = 0; i < numberOfBulletPerShot; i++)
             {
                 spawnAdjust.transform.LookAt(playerRef.transform);
                 bulletSpawn.transform.rotation = Quaternion.Euler(0f,(spawnAdjust.transform.rotation.eulerAngles.y - 90/2) + i * angleStep, 0f);
                 Instantiate(bullet, bulletSpawn.transform.position,bulletSpawn.transform.rotation);
             }
-            
             indexOfShot += 1;
             Invoke(nameof(AimedFanShot), timeBetweenShots);
         }

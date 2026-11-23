@@ -159,7 +159,7 @@ MonoBehaviour:
   waveScript: {fileID: 0}
   health: 0
   maxHealth: 0
-  nbrOfLife: 1
+  nbrOfLife: 2
   listOfBossDropPerLife:
   - bossDropPerLife:
     - {fileID: 6581181297074061766, guid: 43eea575e3ba2f743b98d9692de6b51a, type: 3}
@@ -169,6 +169,9 @@ MonoBehaviour:
     - {fileID: 6581181297074061766, guid: 988292177ed851340b5224847e945636, type: 3}
     - {fileID: 6581181297074061766, guid: 988292177ed851340b5224847e945636, type: 3}
     - {fileID: 6581181297074061766, guid: 43eea575e3ba2f743b98d9692de6b51a, type: 3}
+    - {fileID: 6581181297074061766, guid: 43eea575e3ba2f743b98d9692de6b51a, type: 3}
+  - bossDropPerLife:
+    - {fileID: 6581181297074061766, guid: 988292177ed851340b5224847e945636, type: 3}
   speed: 10
   pathToFollow: {fileID: 0}
 --- !u!114 &5688302638149822073
@@ -196,12 +199,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bossAttackPattern:
-  - BossAttackType: 6
-    numberOfShot: 3
-    numberOfBulletPerShot: 12
-    timeBetweenShots: 0.1
+  - BossAttackType: 0
+    numberOfShot: 5
+    numberOfBulletPerShot: 31
+    timeBetweenShots: 1
     projectile1Prefab: {fileID: 2219929576886428445, guid: 4445e969f20d7b54f875818f63185a90, type: 3}
-    projectile2Prefab: {fileID: 0}
+    projectile2Prefab: {fileID: 2219929576886428445, guid: 392bf20b7a2782a49a99f3220d7b4965, type: 3}
+  - BossAttackType: 5
+    numberOfShot: 120
+    numberOfBulletPerShot: 12
+    timeBetweenShots: 0.25
+    projectile1Prefab: {fileID: 2219929576886428445, guid: 4445e969f20d7b54f875818f63185a90, type: 3}
+    projectile2Prefab: {fileID: 2219929576886428445, guid: 392bf20b7a2782a49a99f3220d7b4965, type: 3}
+  - BossAttackType: 1
+    numberOfShot: 30
+    numberOfBulletPerShot: 50
+    timeBetweenShots: 0.05
+    projectile1Prefab: {fileID: 2219929576886428445, guid: 4445e969f20d7b54f875818f63185a90, type: 3}
+    projectile2Prefab: {fileID: 2219929576886428445, guid: 392bf20b7a2782a49a99f3220d7b4965, type: 3}
   bulletSpawn: {fileID: 7131005161442584810}
   spawnAdjust: {fileID: 336282849175870326}
   stageLenght: {fileID: 0}

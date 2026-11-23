@@ -1827,6 +1827,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d7e120a311d570498599fb50269b002, type: 3}
+--- !u!114 &1964602098 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 305785769108762647, guid: 3ba126cf9fae20a40afd3adbfe3644cc, type: 3}
+  m_PrefabInstance: {fileID: 6222379228662756230}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e9a309209976eb43b6eb7e7a2cc3f51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2088328270
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2481,6 +2492,10 @@ PrefabInstance:
       propertyPath: waveRounds.Array.size
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2859839665952838680, guid: 125c28bf3804f07438ec26496db4d8ca, type: 3}
+      propertyPath: stageLenghtRefForBosses
+      value: 
+      objectReference: {fileID: 1964602098}
     - target: {fileID: 2859839665952838680, guid: 125c28bf3804f07438ec26496db4d8ca, type: 3}
       propertyPath: waveRounds.Array.data[0].path
       value: 

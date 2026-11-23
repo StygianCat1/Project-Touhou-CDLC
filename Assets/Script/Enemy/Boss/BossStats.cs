@@ -33,6 +33,7 @@ public class BossStats : MonoBehaviour
             health = value;
             if (health <= 0)
             {
+                print("change lifeNbr");
                 if (nbrOfLife <= 0)
                 {
                     DestroyAllProjectiles();
@@ -44,7 +45,7 @@ public class BossStats : MonoBehaviour
                 DestroyAllProjectiles();
                 DropCollectibleOnLifeLost();
                 nbrOfLife -= 1 ;
-                attacktype.bossPatternIndex = nbrOfLife - 1;
+                attacktype.bossPatternIndex = nbrOfLife;
                 attacktype.stopAttack = true;
                 currentHealth = maxHealth;
             }
