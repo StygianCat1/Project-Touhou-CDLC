@@ -599,6 +599,12 @@ MonoBehaviour:
   - {fileID: 6581181297074061766, guid: 43eea575e3ba2f743b98d9692de6b51a, type: 3}
   - {fileID: 6581181297074061766, guid: 43eea575e3ba2f743b98d9692de6b51a, type: 3}
   - {fileID: 6581181297074061766, guid: 43eea575e3ba2f743b98d9692de6b51a, type: 3}
+  powerDropOnDeath:
+  - {fileID: 6581181297074061766, guid: 46022ee20f5147946a537bfa3898064a, type: 3}
+  - {fileID: 6581181297074061766, guid: 46022ee20f5147946a537bfa3898064a, type: 3}
+  - {fileID: 6581181297074061766, guid: 46022ee20f5147946a537bfa3898064a, type: 3}
+  - {fileID: 6581181297074061766, guid: 46022ee20f5147946a537bfa3898064a, type: 3}
+  - {fileID: 6581181297074061766, guid: 46022ee20f5147946a537bfa3898064a, type: 3}
   grazeNbr: 0
   pointsNbr: 0
 --- !u!114 &1838450150855834564
@@ -709,8 +715,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterKit: 1
-  timeStopDuration: 3
-  timeRewindDuration: 5
+  timeStopDuration: 2
+  timeRewindDuration: 3
+  coreCollider: {fileID: 2711503396753423735}
+  bodyCollider: {fileID: 4379003814989225749}
   bombProjectileDestructionRange: 15
 --- !u!114 &-5881064746991370990
 MonoBehaviour:

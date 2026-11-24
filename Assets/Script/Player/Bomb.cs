@@ -18,6 +18,9 @@ public class Bomb : MonoBehaviour
     [SerializeField] public KitChoosed characterKit;
     [SerializeField] public float timeStopDuration = 3f;
     [SerializeField] public float timeRewindDuration = 5f;
+    [SerializeField] public Collider coreCollider;
+    [SerializeField] public Collider bodyCollider;
+    
     [SerializeField] public float bombProjectileDestructionRange = 8f;
     
     
@@ -112,6 +115,8 @@ public class Bomb : MonoBehaviour
         Time.timeScale = 1;
     }
     
+    
+    
     private void BombCapacity2()
     {
         timeIsreversing = !timeIsreversing;
@@ -130,6 +135,8 @@ public class Bomb : MonoBehaviour
     {
         if (_playerStates.Count > 0)
         {
+            bodyCollider.enabled = false;
+            coreCollider.enabled = false;
             _playerInput.enabled = false;
             PlayerState playerState = _playerStates[0];
             transform.position = playerState.position;
@@ -141,6 +148,8 @@ public class Bomb : MonoBehaviour
         {
             _playerInput.enabled = true;
             timeIsreversing = false;
+            bodyCollider.enabled = true;
+            coreCollider.enabled = true;
         }
     }
 
