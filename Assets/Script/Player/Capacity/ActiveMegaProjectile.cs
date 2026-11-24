@@ -4,6 +4,8 @@ using UnityEngine;
 public class ActiveMegaProjectile : MonoBehaviour
 {
     private Shoot _shoot;
+    private Capacity_GUI _capacity_GUI;
+
     
     [SerializeField] public CapacityType capacityType = CapacityType.Active;
     [SerializeField] public GameObject MegaProjectilePrefab;
@@ -14,6 +16,8 @@ public class ActiveMegaProjectile : MonoBehaviour
     void Start()
     {
         _shoot = GetComponent<Shoot>();
+        _capacity_GUI = GameObject.FindGameObjectWithTag("GUI").GetComponent<Capacity_GUI>();
+        _capacity_GUI.activeCapacityText.text = numberOfUse.ToString();
     }
 
     public void ShootMegaprojectile()
@@ -23,6 +27,7 @@ public class ActiveMegaProjectile : MonoBehaviour
             GameObject shot = Instantiate(MegaProjectilePrefab, _shoot.primaryAttackMuzzle.transform.position, _shoot.primaryAttackMuzzle.transform.rotation);
             shot.GetComponent<PlayerProjectileDamage>().stats = GetComponent<Stats>();
             numberOfUse -= 1;
+            _capacity_GUI.activeCapacityText.text = numberOfUse.ToString();
         }
     }
 }

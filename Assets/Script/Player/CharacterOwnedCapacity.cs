@@ -17,6 +17,8 @@ public class Capacity
 
 public class CharacterOwnedCapacity : MonoBehaviour
 {
+    private GameObject gUI;
+    
     [SerializeField] public List<Capacity> capacitiesList;
     
     [SerializeField] public CapacityName activeCapacity;
@@ -36,6 +38,7 @@ public class CharacterOwnedCapacity : MonoBehaviour
         SetActiveAbility();
         SetEquipmentAbility();
         SetpassiveAbility();
+        SetGUI();
     }
     
     
@@ -105,5 +108,15 @@ public class CharacterOwnedCapacity : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void SetGUI()
+    {
+        gUI = GameObject.FindGameObjectWithTag("GUI");
+        gUI.GetComponent<Capacity_GUI>().activeCapacity = activeCapacity;
+        gUI.GetComponent<Capacity_GUI>().equipmentCapacity1 = equipmentCapacity1;
+        gUI.GetComponent<Capacity_GUI>().equipmentCapacity2 = equipmentCapacity2;
+        gUI.GetComponent<Capacity_GUI>().passiveCapacity1 = passiveCapacity1;
+        gUI.GetComponent<Capacity_GUI>().passiveCapacity2 = passiveCapacity2;
     }
 }

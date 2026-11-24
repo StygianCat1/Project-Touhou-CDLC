@@ -1,4 +1,3 @@
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -21,7 +20,7 @@ public class PlayerStats_GUI : MonoBehaviour
     public void UpdatePower(int newPower, int maxPower)
     {
         PowerText.text = newPower.ToString();
-        PowerSlider.value = newPower/maxPower;
+        PowerSlider.value = (float)newPower/(float)maxPower;
     }    
     public void UpdateGraze(int newGraze)
     {

@@ -4,6 +4,7 @@ using UnityEngine;
 public class ActiveFasterShootingSpeed : MonoBehaviour
 {
     private Shoot _shoot;
+    private Capacity_GUI _capacity_GUI;
     
     [SerializeField] public CapacityType capacityType = CapacityType.Active;
     [SerializeField] public float temporaryAttackSpeed = 2f;
@@ -20,6 +21,8 @@ public class ActiveFasterShootingSpeed : MonoBehaviour
     {
         _shoot = GetComponent<Shoot>();
         normalAttackSpeed = _shoot.attackSpeedBoostMultiplier;
+        _capacity_GUI = GameObject.FindGameObjectWithTag("GUI").GetComponent<Capacity_GUI>();
+        _capacity_GUI.activeCapacityText.text = numberOfUse.ToString();
     }
 
     // Update is called once per frame
@@ -43,6 +46,8 @@ public class ActiveFasterShootingSpeed : MonoBehaviour
             _shoot.attackSpeedBoostMultiplier = 2f;
             isBoosted = true;
             numberOfUse -= 1;
+            _capacity_GUI.activeCapacityText.text = numberOfUse.ToString();
+
         }
     }
 
