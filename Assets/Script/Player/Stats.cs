@@ -1,6 +1,8 @@
 using System;
+using System.Collections.Generic;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Script.Player;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -41,10 +43,13 @@ public class Stats : MonoBehaviour
     
     [SerializeField] public int currentHealth = 3;
     [SerializeField] public float invulnerabilityTime = 3f;
-    [SerializeField] public Collider coreCollider ;
+    [SerializeField] public CharacterCoreCollision coreCollider ;
     [SerializeField] public MeshRenderer charaBodyRenderer;
     [SerializeField] public int currentBomb = 3;
     [SerializeField] public int continueNbr = 3;
+    
+    [SerializeField] public GameObject continueUi;
+    [SerializeField] public GameObject fadeToBlack;
 
     public int health
     {
@@ -60,7 +65,6 @@ public class Stats : MonoBehaviour
                 {
                     return;
                 }
-
                 InvincibilityTime();
             }
             
@@ -69,13 +73,18 @@ public class Stats : MonoBehaviour
             
             if (health <= 0)
             {
-                print("character is dead");
-                // script to make character explode and ask if want to continue
+                if (continueNbr == 0)
+                {
+                    fadeToBlack.SetActive(true);
+                    fadeToBlack.GetComponent<FadeToBlack>().levelName = "MainMenuScene";
+                    return;
+                }
+                death = true;
+                continueUi.SetActive(true);
+                return;
             }
-            else
-            {
-                LosePower();
-            }
+            LosePower();
+            death = false;
         }
     }
 
@@ -93,6 +102,9 @@ public class Stats : MonoBehaviour
     }
 
     [SerializeField] public int powerNbr = 8;
+    [SerializeField] public List<GameObject> powerDropOnDamage;
+    [SerializeField] public List<GameObject> powerDropOnDeath;
+    
     [SerializeField] public int grazeNbr = 0;
     [SerializeField] public int pointsNbr = 0;
 
@@ -137,6 +149,7 @@ public class Stats : MonoBehaviour
 
 
     private float invulnerabilityTimer;
+    private bool death;
 
     private void Start()
     {
@@ -144,12 +157,12 @@ public class Stats : MonoBehaviour
         _bombRef = GetComponent<Bomb>(); 
         _equipementArmorProtetionRef = GetComponent<EquipementArmorProtetion>();
         gameUI = GameObject.FindGameObjectWithTag("GUI");
+        continueUi.GetComponent<Continue>().stats = this;
     }
 
     private void InvincibilityTime()
     {
-        print("is REDACTED");
-        coreCollider.enabled = false;
+        coreCollider.invulnerable = true;
         ShowInvincibility();
         Invoke(nameof(StopInvincibility), invulnerabilityTime);
     }
@@ -159,8 +172,8 @@ public class Stats : MonoBehaviour
         if (invulnerabilityTimer <= invulnerabilityTime)
         {
             charaBodyRenderer.enabled = !charaBodyRenderer.isVisible;
-            invulnerabilityTimer += 0.1f;
-            Invoke(nameof(ShowInvincibility), 0.1f);
+            invulnerabilityTimer += 0.2f;
+            Invoke(nameof(ShowInvincibility), 0.2f);
             return;
         }
         invulnerabilityTimer = 0;
@@ -169,12 +182,27 @@ public class Stats : MonoBehaviour
 
     private void StopInvincibility()
     {
-        print("stop being REDACTED");
-        coreCollider.enabled = true;
+        coreCollider.invulnerable = false;
     }
 
     private void LosePower()
     {
-        //power -= Mathf.RoundToInt(power * 0.9f); 
+        if (death)
+        {
+            return;
+        }
+        power = power - (13 + Mathf.RoundToInt(power * 0.1f));
+        foreach (GameObject powerDrop in powerDropOnDamage)
+        {
+            Instantiate(powerDrop, transform.position + new Vector3(0,0,5), transform.rotation);
+        }
+    }
+
+    public void SpawnContinueCollectible()
+    {
+        foreach (GameObject powerDrop in powerDropOnDeath)
+        {
+            Instantiate(powerDrop, transform.position + new Vector3(0,0,5), transform.rotation);
+        }
     }
 }

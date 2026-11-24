@@ -352,6 +352,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9cb70394d1ab964ab9873ce1bdfcc65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  invulnerable: 0
 --- !u!1 &7747568573035946354
 GameObject:
   m_ObjectHideFlags: 0
@@ -584,11 +585,20 @@ MonoBehaviour:
   hilScore: 0
   currentHealth: 3
   invulnerabilityTime: 3
-  coreCollider: {fileID: 2711503396753423735}
+  coreCollider: {fileID: 1551823834273375229}
   charaBodyRenderer: {fileID: 1374580900434826708}
   currentBomb: 3
   continueNbr: 3
+  continueUi: {fileID: 0}
+  fadeToBlack: {fileID: 0}
   powerNbr: 8
+  powerDropOnDamage:
+  - {fileID: 6581181297074061766, guid: 988292177ed851340b5224847e945636, type: 3}
+  - {fileID: 6581181297074061766, guid: 43eea575e3ba2f743b98d9692de6b51a, type: 3}
+  - {fileID: 6581181297074061766, guid: 43eea575e3ba2f743b98d9692de6b51a, type: 3}
+  - {fileID: 6581181297074061766, guid: 43eea575e3ba2f743b98d9692de6b51a, type: 3}
+  - {fileID: 6581181297074061766, guid: 43eea575e3ba2f743b98d9692de6b51a, type: 3}
+  - {fileID: 6581181297074061766, guid: 43eea575e3ba2f743b98d9692de6b51a, type: 3}
   grazeNbr: 0
   pointsNbr: 0
 --- !u!114 &1838450150855834564

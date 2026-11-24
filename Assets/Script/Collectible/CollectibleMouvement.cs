@@ -1,6 +1,5 @@
-using System;
 using UnityEngine;
-using Random = Unity.Mathematics.Random;
+using Random = UnityEngine.Random;
 
 public class CollectibleMouvement : MonoBehaviour
 {
@@ -9,15 +8,18 @@ public class CollectibleMouvement : MonoBehaviour
     private float angle = 0;
      private bool moveToPlayer = false;
     
-    [SerializeField] public float mouvementSpeed = 0.15f;
-    [SerializeField] public float directionChangeSpeed = 0.8f;
-    [SerializeField] public float angleChangeSpeed = 0.02f;
-    [SerializeField] public float speedTowardPlayer = 0.5f;
+    [SerializeField] public float mouvementSpeed = 15f;
+    [SerializeField] public float directionChangeSpeed = 1f;
+    [SerializeField] public float angleChangeSpeed = 4f;
+    [SerializeField] public float speedTowardPlayer = 100f;
+    
+    private float randomHeightSpeed;
 
     private void Start()
     {
         characterRef = GameObject.FindGameObjectWithTag("Player");
-        angle = UnityEngine.Random.Range(-1f,1f);
+        angle = Random.Range(-1f,1f);
+        randomHeightSpeed = directionChangeSpeed + Random.Range(-directionChangeSpeed * 0.3f, directionChangeSpeed * 0.3f);
         Destroy(gameObject, 10f);
     }
 
@@ -48,7 +50,7 @@ public class CollectibleMouvement : MonoBehaviour
     private void VerticlaMoveCollectible()
     {
         transform.Translate(new Vector3(0f ,0f , directionref * mouvementSpeed * Time.deltaTime), Space.World);
-        directionref -= Time.deltaTime * directionChangeSpeed;
+        directionref -= Time.deltaTime * randomHeightSpeed;
     }
 
     private void HorizontalMoveCollectible(float moveAngle)

@@ -4,6 +4,8 @@ public class CharacterCoreCollision : MonoBehaviour
 {
     private Stats stats;
     
+    [SerializeField] public bool invulnerable;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -17,10 +19,24 @@ public class CharacterCoreCollision : MonoBehaviour
             other.gameObject.GetComponent<ActivateCollectibleMovement>().ActractCollectible();
         }
         
-        if (other.tag == "Enemy" || other.tag == "EnemyProjectile")
-        {
+        if (other.tag == "EnemyProjectile")
+        {            
+            Destroy(other.gameObject);
+            if (invulnerable)
+            {
+                return;
+            }
             stats.health -= 1;
-            print("deal damage to health in stats + add invincibility for short period of time");
+        }
+
+        if (other.tag == "Enemy")
+        {
+            if (invulnerable)
+            {
+                return;
+            }
+
+            stats.health -= 1;
         }
     }
 }

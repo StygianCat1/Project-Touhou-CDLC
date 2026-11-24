@@ -138,5 +138,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouvementSpeed: 15
   directionChangeSpeed: 1
-  angleChangeSpeed: 2
+  angleChangeSpeed: 4
   speedTowardPlayer: 100

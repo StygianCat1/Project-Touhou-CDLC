@@ -7,6 +7,5 @@ public class PlayerPause : MonoBehaviour
     public void Pause()
     {
         pauseMenu.SetActive(true);
-        Time.timeScale = 0;
     }
 }
