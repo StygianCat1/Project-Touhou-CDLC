@@ -9,6 +9,8 @@ public class ActiveFasterShootingSpeed : MonoBehaviour
     [SerializeField] public float temporaryAttackSpeed = 2f;
     [SerializeField] public float boostDuration = 10f;
     [SerializeField] public bool isBoosted = false;
+    [SerializeField] public int numberOfUse = 2;
+
     
     private float boostTimer = 0f;
     private float  normalAttackSpeed;
@@ -30,9 +32,18 @@ public class ActiveFasterShootingSpeed : MonoBehaviour
     }
     
     public void BoostShootSpeed()
-    { ;
-        _shoot.attackSpeedBoostMultiplier = 2f;
-        isBoosted = true;
+    {
+        if (isBoosted)
+        {
+            return;
+        }
+        
+        if (numberOfUse != 0)
+        {
+            _shoot.attackSpeedBoostMultiplier = 2f;
+            isBoosted = true;
+            numberOfUse -= 1;
+        }
     }
 
     public void StopBoost()

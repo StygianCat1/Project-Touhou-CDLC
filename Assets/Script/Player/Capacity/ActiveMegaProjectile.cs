@@ -7,6 +7,7 @@ public class ActiveMegaProjectile : MonoBehaviour
     
     [SerializeField] public CapacityType capacityType = CapacityType.Active;
     [SerializeField] public GameObject MegaProjectilePrefab;
+    [SerializeField] public int numberOfUse = 5;
     
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -17,7 +18,11 @@ public class ActiveMegaProjectile : MonoBehaviour
 
     public void ShootMegaprojectile()
     {
-        GameObject shot = Instantiate(MegaProjectilePrefab, _shoot.primaryAttackMuzzle.transform.position, _shoot.primaryAttackMuzzle.transform.rotation);
-        shot.GetComponent<PlayerProjectileDamage>().stats = GetComponent<Stats>();
+        if (numberOfUse != 0)
+        {
+            GameObject shot = Instantiate(MegaProjectilePrefab, _shoot.primaryAttackMuzzle.transform.position, _shoot.primaryAttackMuzzle.transform.rotation);
+            shot.GetComponent<PlayerProjectileDamage>().stats = GetComponent<Stats>();
+            numberOfUse -= 1;
+        }
     }
 }
