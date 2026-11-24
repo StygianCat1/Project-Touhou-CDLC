@@ -200,7 +200,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.6666666, y: 1, z: 1}
+  m_Size: {x: 1.1111113, y: 1, z: 0.6666667}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5984157283919792
 MonoBehaviour:
@@ -583,10 +583,12 @@ MonoBehaviour:
   currentScore: 0
   hilScore: 0
   currentHealth: 3
-  invulnerabilityTime: 2
+  invulnerabilityTime: 3
+  coreCollider: {fileID: 2711503396753423735}
+  charaBodyRenderer: {fileID: 1374580900434826708}
   currentBomb: 3
   continueNbr: 3
-  powerNbr: 5
+  powerNbr: 8
   grazeNbr: 0
   pointsNbr: 0
 --- !u!114 &1838450150855834564
@@ -761,6 +763,7 @@ MonoBehaviour:
   temporaryAttackSpeed: 2
   boostDuration: 10
   isBoosted: 0
+  numberOfUse: 3
 --- !u!114 &5610111011308909942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -775,6 +778,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   capacityType: 0
   MegaProjectilePrefab: {fileID: 3311958362472844833, guid: e26c983848882484d8b3684b2264ca30, type: 3}
+  numberOfUse: 5
 --- !u!114 &7387523290143198856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -816,7 +820,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   capacityType: 1
-  longerInvulnerabilityTime: 1
+  longerInvulnerabilityTime: 2
 --- !u!114 &9134637842476874385
 MonoBehaviour:
   m_ObjectHideFlags: 0

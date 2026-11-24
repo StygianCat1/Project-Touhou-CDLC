@@ -40,7 +40,9 @@ public class Stats : MonoBehaviour
     [SerializeField] public int hilScore;
     
     [SerializeField] public int currentHealth = 3;
-    [SerializeField] public float invulnerabilityTime = 2f;
+    [SerializeField] public float invulnerabilityTime = 3f;
+    [SerializeField] public Collider coreCollider ;
+    [SerializeField] public MeshRenderer charaBodyRenderer;
     [SerializeField] public int currentBomb = 3;
     [SerializeField] public int continueNbr = 3;
 
@@ -52,17 +54,22 @@ public class Stats : MonoBehaviour
         }
         set 
         {
-            if (value < currentHealth && _equipementArmorProtetionRef.isActiveAndEnabled)
+            if (value < currentHealth)
             {
-                if (_equipementArmorProtetionRef.CheckIfTakeDamage())
+                if (_equipementArmorProtetionRef.isActiveAndEnabled && _equipementArmorProtetionRef.CheckIfTakeDamage())
                 {
                     return;
                 }
+
+                InvincibilityTime();
             }
+            
             currentHealth = Mathf.Clamp(value, 0, 8);
             gUI.GetComponent<PlayerInfo_GUI>().UpdateHealth(health);
+            
             if (health <= 0)
             {
+                print("character is dead");
                 // script to make character explode and ask if want to continue
             }
             else
@@ -128,6 +135,9 @@ public class Stats : MonoBehaviour
         }
     }
 
+
+    private float invulnerabilityTimer;
+
     private void Start()
     {
         _shootRef = GetComponent<Shoot>();
@@ -136,22 +146,34 @@ public class Stats : MonoBehaviour
         gameUI = GameObject.FindGameObjectWithTag("GUI");
     }
 
-    public void UseBomb()
+    private void InvincibilityTime()
     {
-        bomb -= 1;
+        print("is REDACTED");
+        coreCollider.enabled = false;
+        ShowInvincibility();
+        Invoke(nameof(StopInvincibility), invulnerabilityTime);
     }
 
-    public void GainBomb()
+    private void ShowInvincibility()
     {
-        bomb += 1;
+        if (invulnerabilityTimer <= invulnerabilityTime)
+        {
+            charaBodyRenderer.enabled = !charaBodyRenderer.isVisible;
+            invulnerabilityTimer += 0.1f;
+            Invoke(nameof(ShowInvincibility), 0.1f);
+            return;
+        }
+        invulnerabilityTimer = 0;
+        charaBodyRenderer.enabled = true;
     }
 
-    public void GainPower(int powerGain)
+    private void StopInvincibility()
     {
-        power += powerGain;
+        print("stop being REDACTED");
+        coreCollider.enabled = true;
     }
 
-    public void LosePower()
+    private void LosePower()
     {
         //power -= Mathf.RoundToInt(power * 0.9f); 
     }
