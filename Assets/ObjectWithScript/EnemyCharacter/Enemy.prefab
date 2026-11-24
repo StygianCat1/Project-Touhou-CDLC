@@ -189,16 +189,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropCollectibles:
-  - collectiblePrefab: {fileID: 6581181297074061766, guid: 0c5f01f530bb66f4f9dd01ca8df59635, type: 3}
-    dropPercentage: 50
   - collectiblePrefab: {fileID: 6581181297074061766, guid: 43eea575e3ba2f743b98d9692de6b51a, type: 3}
-    dropPercentage: 40
+    dropPercentage: 50
   - collectiblePrefab: {fileID: 6581181297074061766, guid: 988292177ed851340b5224847e945636, type: 3}
     dropPercentage: 20
+  - collectiblePrefab: {fileID: 6581181297074061766, guid: 0c5f01f530bb66f4f9dd01ca8df59635, type: 3}
+    dropPercentage: 60
   - collectiblePrefab: {fileID: 6581181297074061766, guid: c19a90dddade9e247b434f5f0f2692d7, type: 3}
-    dropPercentage: 0
+    dropPercentage: 5
   - collectiblePrefab: {fileID: 6581181297074061766, guid: e37d1f31242d92d49ae182d8a03b3dda, type: 3}
-    dropPercentage: 0
+    dropPercentage: 5
 --- !u!114 &8184960044180482146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,7 +213,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   maxHealth: 100
-  pathToFolloww: {fileID: 0}
+  pathToFollow: {fileID: 0}
   speed: 15
 --- !u!114 &4129900465325549110
 MonoBehaviour:

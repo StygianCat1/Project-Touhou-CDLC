@@ -44,6 +44,8 @@ public class WaveScript : MonoBehaviour
     [SerializeField] public float timeBetweenEnemies = 0.8f;
     
     [SerializeField] public StageLenght stageLenghtRefForBosses;
+    
+    [SerializeField] public GameObject ScoreboardRef;
 
     //Private int to keep track of the waveRound list index
     private int waveIndex = 0;
@@ -65,6 +67,7 @@ public class WaveScript : MonoBehaviour
         {
             print("it was the last wave");
             print("spawn score & end game");
+            ScoreboardRef.SetActive(true);
             return;
         }
         
