@@ -1,10 +1,13 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Scoreboard : MonoBehaviour
 {
     [SerializeField] public Stats stats;
     [SerializeField] public ProblemSolver problemSolver;
+    
+    [SerializeField] public string nextSceneName;
     
     [SerializeField] public TextMeshProUGUI stageScoreText;
     [SerializeField] public TextMeshProUGUI powerScoreText;
@@ -14,6 +17,8 @@ public class Scoreboard : MonoBehaviour
     
     [SerializeField] public TextMeshProUGUI BonusTotalText;
     [SerializeField] public TextMeshProUGUI TotalText;
+
+    private float timerToNextStage;
     
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -21,6 +26,7 @@ public class Scoreboard : MonoBehaviour
     {
         SetStatsMultiplier();
         SetScoresText();
+        BeginTimer();
         Time.timeScale = 0f;
     }
 
@@ -40,4 +46,22 @@ public class Scoreboard : MonoBehaviour
         TotalText.text = (stats.score + scorebonus).ToString();
         stats.score += scorebonus;
     }
+
+    private void BeginTimer()
+    {
+        if (timerToNextStage <= 10f)
+        {
+            timerToNextStage += Time.unscaledTime;
+            return;
+        }
+        MoveToNextStage();
+    }
+
+    public void MoveToNextStage()
+    {
+        SceneManager.LoadScene(nextSceneName);
+    }
+    
+    
+    
 }
