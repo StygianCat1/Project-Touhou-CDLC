@@ -5,6 +5,7 @@ public class CollectibleType : MonoBehaviour
 {
     [SerializeField] public TypeOfCollectible collectibleType;
     [SerializeField] public int collectibleNbr;
+    [SerializeField] public int pointEarned;
     
     public void Collectible(Stats characterStats) 
     {
@@ -24,5 +25,7 @@ public class CollectibleType : MonoBehaviour
         {
             characterStats.bomb += collectibleNbr;
         }
+        
+        characterStats.score += pointEarned;
     }
 }

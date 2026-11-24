@@ -19,10 +19,9 @@ public class Stats : MonoBehaviour
         {
             gUI = value;
             //gUI.GetComponent<DifficultyChoosen_GUI>();
-            //gUI.GetComponent<Score_GUI>();
+            gUI.GetComponent<Score_GUI>().UpdateAllScores(score, hiScore);
             gUI.GetComponent<PlayerInfo_GUI>().UpdateAllInfos(health, bomb);
             gUI.GetComponent<PlayerStats_GUI>().UpdateAllStats(power,140, graze, points);
-            //gUI.GetComponent<Capacity_GUI>();
         }
     }
 
@@ -39,7 +38,22 @@ public class Stats : MonoBehaviour
     }
 
     [SerializeField] public int currentScore = 0;
-    [SerializeField] public int hilScore;
+    [SerializeField] public int hiScore;
+
+    public int score
+    {
+        get { return currentScore; }
+        set
+        {
+            currentScore = value;
+            gUI.GetComponent<Score_GUI>().ChangeScore(score);
+            if (currentScore > hiScore)
+            {
+                hiScore = currentScore;
+                gUI.GetComponent<Score_GUI>().ChangeHiScore(hiScore);
+            }
+        }
+    }
     
     [SerializeField] public int currentHealth = 3;
     [SerializeField] public float invulnerabilityTime = 3f;
@@ -67,6 +81,10 @@ public class Stats : MonoBehaviour
                 }
                 InvincibilityTime();
             }
+            else if (!(value < currentHealth))
+            {
+                losePowerCheck = true;
+            }
             
             currentHealth = Mathf.Clamp(value, 0, 8);
             gUI.GetComponent<PlayerInfo_GUI>().UpdateHealth(health);
@@ -79,12 +97,12 @@ public class Stats : MonoBehaviour
                     fadeToBlack.GetComponent<FadeToBlack>().levelName = "MainMenuScene";
                     return;
                 }
-                death = true;
+                losePowerCheck = true;
                 continueUi.SetActive(true);
                 return;
             }
             LosePower();
-            death = false;
+            losePowerCheck = false;
         }
     }
 
@@ -149,7 +167,7 @@ public class Stats : MonoBehaviour
 
 
     private float invulnerabilityTimer;
-    private bool death;
+    private bool losePowerCheck;
 
     private void Start()
     {
@@ -187,10 +205,12 @@ public class Stats : MonoBehaviour
 
     private void LosePower()
     {
-        if (death)
+        if (losePowerCheck)
         {
             return;
         }
+
+        score += 10000;
         power = power - (13 + Mathf.RoundToInt(power * 0.1f));
         foreach (GameObject powerDrop in powerDropOnDamage)
         {
@@ -200,6 +220,7 @@ public class Stats : MonoBehaviour
 
     public void SpawnContinueCollectible()
     {
+        score = 0;
         foreach (GameObject powerDrop in powerDropOnDeath)
         {
             Instantiate(powerDrop, transform.position + new Vector3(0,0,5), transform.rotation);

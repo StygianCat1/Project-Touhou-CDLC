@@ -124,6 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collectibleType: 1
   collectibleNbr: 1
+  pointEarned: 42000
 --- !u!114 &-3583188620536454542
 MonoBehaviour:
   m_ObjectHideFlags: 0
