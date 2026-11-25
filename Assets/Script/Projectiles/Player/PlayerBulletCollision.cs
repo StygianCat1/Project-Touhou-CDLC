@@ -3,31 +3,40 @@ using UnityEngine;
 
 public class PlayerBulletCollision : MonoBehaviour
 {
+    //Ref to damage done by projectles
     private PlayerProjectileDamage _playerProjectileDamage;
 
+    //Check for if is giant projectile
     [SerializeField] public bool isGiantProjectile;
     
     private void Start()
     {
+        //Reference the component
         _playerProjectileDamage = GetComponent<PlayerProjectileDamage>();
     }
 
     public void OnTriggerEnter(Collider other)
     {
+        //Check if enemy
         if (other.tag == "Enemy")
         {
+            //Check if has enemy stats component
             if (other.GetComponent<EnemyStats>() != null)
             {
+                //If it has one then deal damage to it
                 other.GetComponent<EnemyStats>().currentHealth -= _playerProjectileDamage.totalDamage;
+                //And if it isn't a giant projectile then destroy it
                 if (!isGiantProjectile)
                 {
                     Destroy(gameObject);
                 }
             }
+            //Check if has boss stats component
             else if (other.GetComponent<BossStats>() != null)
             {
-                print("attack boss");
+                //If it has one then deal damage to it
                 other.GetComponent<BossStats>().currentHealth -= _playerProjectileDamage.totalDamage;
+                //And if it isn't a giant projectile then destroy it
                 if (!isGiantProjectile)
                 {
                     Destroy(gameObject);

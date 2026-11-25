@@ -42,9 +42,10 @@ public class WaveScript : MonoBehaviour
     [SerializeField] public List<WaveRound> waveRounds;
     //An int that tell how many seconds the wave have to wait before spawning a new enemy (time between enemy spawn)
     [SerializeField] public float timeBetweenEnemies = 0.8f;
-    
+    //Ref of the satge lenght to be used for the boss
     [SerializeField] public StageLenght stageLenghtRefForBosses;
     
+    //Ref to scoreboard UI (to spawn at the end of the game
     [SerializeField] public GameObject ScoreboardRef;
 
     //Private int to keep track of the waveRound list index
@@ -63,23 +64,29 @@ public class WaveScript : MonoBehaviour
 
     private void BeginWave()
     {
+        //if it was the last wave of the list
         if (waveRounds.Count - 1 <= waveIndex)
         {
-            print("it was the last wave");
-            print("spawn score & end game");
+            //Spawn the scoreboard
             ScoreboardRef.SetActive(true);
             return;
         }
         
+        //index of enemy to keep in check
         enemyIndex = 0;
+        //Start coroutine to spawn the enemy
         StartCoroutine(SpawnWave());
+        //If the next wave is a normal enemy wave
         if (waveRounds[waveIndex+1].waveType == WaveType.NormalEnemy)
         {
+            //Call the begin wave function after sometime
             Invoke(nameof(BeginWave), waveRounds[waveIndex].timeBetweenWaves +  (waveRounds[waveIndex].wave.Count * timeBetweenEnemies));
         }
+        //If the next wave is a boss wave then 
         else if (waveRounds[waveIndex+1].waveType == WaveType.Boss)
         {
             print("spawn boss through normal mean");
+            //Call the check for boss function after sometime
             Invoke(nameof(CheckForBoss), waveRounds[waveIndex].timeBetweenWaves +  (waveRounds[waveIndex].wave.Count * timeBetweenEnemies));
         }
     }
@@ -87,23 +94,31 @@ public class WaveScript : MonoBehaviour
     //Enumerator that will spawn enemy by wave
     private IEnumerator SpawnWave()
     {
+        //Check for index empty
         if (waveRounds[waveIndex].wave.Count == 0)
         {
             print("wave" + waveIndex + " is empty");
+            //if empty then go to next wave
             waveIndex += 1;
             yield break;
         }
+        //if enemy have a path
         if (waveRounds[waveIndex].path != null)
         {
+            //Get number of enemy
             for (int i = 0; i < waveRounds[waveIndex].wave.Count; i++)
             {
+                //Spawn enemy on path position & give it reference (path & health) 
                 GameObject enemyRef = Instantiate(waveRounds[waveIndex].wave[enemyIndex].enemyPrefab, waveRounds[waveIndex].path.waypoints[0].transform.position, waveRounds[waveIndex].path.waypoints[0].transform.rotation);
                 EnemyStats stats = enemyRef.GetComponent<EnemyStats>();
                 stats.pathToFollow = waveRounds[waveIndex].path;
                 stats.ChangeHealthValue(waveRounds[waveIndex].wave[enemyIndex].enemyHealth);
+                //add to enemy index
                 enemyIndex += 1;
+                //Wait some time for next enemy to spawn
                 yield return new WaitForSeconds(timeBetweenEnemies);
             }
+            //Add to wave index
             waveIndex += 1;
         }
     }
@@ -111,13 +126,16 @@ public class WaveScript : MonoBehaviour
 
     private void CheckForBoss()
     {
-        print("is checking for boss");
+        //Set enemy index back to 0 in case
         enemyIndex = 0;
+        //Get references for all enemies, enemies projectiles & collectables
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         GameObject[] enemiesProjectiles = GameObject.FindGameObjectsWithTag("EnemyProjectile");
         GameObject[] collectibles = GameObject.FindGameObjectsWithTag("Collectible");
+        //If there's none
         if (enemies.Length == 0 && enemiesProjectiles .Length == 0  && collectibles .Length == 0)
         {
+            //Spawn the boss & give it reference (path, health, stage lenght)
             GameObject boss = Instantiate(waveRounds[waveIndex].wave[enemyIndex].enemyPrefab, waveRounds[waveIndex].path.waypoints[0].transform.position, waveRounds[waveIndex].path.waypoints[0].transform.rotation);
             BossStats stats = boss.GetComponent<BossStats>();
             stats.pathToFollow = waveRounds[waveIndex].path;
@@ -127,13 +145,17 @@ public class WaveScript : MonoBehaviour
             attack.stageLenght = stageLenghtRefForBosses;
             return;
         }
+        //Check for security purpose to not get into a infinite loop
         if (security <= 8)
         {
+            //Check again after 1 sce
             Invoke(nameof(CheckForBoss), 1);
             security += 1;
         }
+        //If after 8 sec it does not work
         else
         {
+            //Delete all element (enemies, enemies projectiles & collectables 
             foreach (GameObject enemy in enemies)
             {
                 Destroy(enemy);
@@ -146,6 +168,7 @@ public class WaveScript : MonoBehaviour
             {
                 Destroy(collectible);
             }
+            //Spawn the boss & give it reference (path, health, stage lenght)
             GameObject boss = Instantiate(waveRounds[waveIndex].wave[enemyIndex].enemyPrefab, waveRounds[waveIndex].path.waypoints[0].transform.position, waveRounds[waveIndex].path.waypoints[0].transform.rotation);
             BossStats stats = boss.GetComponent<BossStats>();
             stats.pathToFollow = waveRounds[waveIndex].path;
@@ -157,6 +180,7 @@ public class WaveScript : MonoBehaviour
     }
     
     
+    //Function for when boss is defeated to call it and continue in the wave
     public void BossDefeated()
     {
         print("boss defeated");
