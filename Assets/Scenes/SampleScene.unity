@@ -1900,23 +1900,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -5881064746991370990, guid: 8f53ab8aed27a2045a251e69ce3d9395, type: 3}
       propertyPath: activeCapacity
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -5881064746991370990, guid: 8f53ab8aed27a2045a251e69ce3d9395, type: 3}
       propertyPath: passiveCapacity1
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -5881064746991370990, guid: 8f53ab8aed27a2045a251e69ce3d9395, type: 3}
       propertyPath: passiveCapacity2
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -5881064746991370990, guid: 8f53ab8aed27a2045a251e69ce3d9395, type: 3}
       propertyPath: equipmentCapacity1
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -5881064746991370990, guid: 8f53ab8aed27a2045a251e69ce3d9395, type: 3}
       propertyPath: equipmentCapacity2
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 546791900729736018, guid: 8f53ab8aed27a2045a251e69ce3d9395, type: 3}
       propertyPath: hiScore
@@ -2851,7 +2851,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2859839665952838680, guid: 125c28bf3804f07438ec26496db4d8ca, type: 3}
       propertyPath: waveRounds.Array.data[0].wave.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2859839665952838680, guid: 125c28bf3804f07438ec26496db4d8ca, type: 3}
       propertyPath: waveRounds.Array.data[1].wave.Array.size
@@ -2892,7 +2892,15 @@ PrefabInstance:
     - target: {fileID: 2859839665952838680, guid: 125c28bf3804f07438ec26496db4d8ca, type: 3}
       propertyPath: waveRounds.Array.data[0].wave.Array.data[0].enemyPrefab
       value: 
-      objectReference: {fileID: 4298658971652044987, guid: 4494a905b2c278e40b28c90df8d2b276, type: 3}
+      objectReference: {fileID: 4298658971652044987, guid: 41224c69e8fe45e41a91907862e7d992, type: 3}
+    - target: {fileID: 2859839665952838680, guid: 125c28bf3804f07438ec26496db4d8ca, type: 3}
+      propertyPath: waveRounds.Array.data[0].wave.Array.data[1].enemyHealth
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2859839665952838680, guid: 125c28bf3804f07438ec26496db4d8ca, type: 3}
+      propertyPath: waveRounds.Array.data[0].wave.Array.data[1].enemyPrefab
+      value: 
+      objectReference: {fileID: 4298658971652044987, guid: 073b7c03536a1264e8c3e10b7f05d8dd, type: 3}
     - target: {fileID: 2859839665952838680, guid: 125c28bf3804f07438ec26496db4d8ca, type: 3}
       propertyPath: waveRounds.Array.data[1].wave.Array.data[0].enemyHealth
       value: 1000

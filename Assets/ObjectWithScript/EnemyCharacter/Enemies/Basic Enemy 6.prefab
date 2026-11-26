@@ -240,10 +240,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db1bf9a0299df4f9c7c5885f55e6e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  typeOfAttack: 1
+  typeOfAttack: 3
   bullet: {fileID: 2219929576886428445, guid: a7925d0bb023b864e943d7af8388b355, type: 3}
   bulletSpawn: {fileID: 1794445628262847542}
   spawnAdjust: {fileID: 770885746782045476}
-  numberOfShot: 10
-  numberOfBulletPerShot: 5
+  numberOfShot: 3
+  numberOfBulletPerShot: 6
   timeBetweenShots: 0.05

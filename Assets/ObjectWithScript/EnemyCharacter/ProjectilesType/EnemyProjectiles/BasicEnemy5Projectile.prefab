@@ -123,6 +123,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileType: 2
   attackSpeed: 10
-  degreeOfRotationOnCurve: 0.1
+  degreeOfRotationOnCurve: 0.07
   direction: {x: 0, y: 0, z: 1}
   disorder: 0
