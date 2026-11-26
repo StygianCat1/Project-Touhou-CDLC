@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5531790972493649256}
   - component: {fileID: 3188447263608766865}
   m_Layer: 0
-  m_Name: EnemyProjectile
+  m_Name: MidBossSpiralProjectile
   m_TagString: EnemyProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -121,8 +121,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c66f7f50dc82d7444baf18db04791f6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileType: 0
+  projectileType: 2
   attackSpeed: 10
-  degreeOfRotationOnCurve: 0.1
+  degreeOfRotationOnCurve: 0.05
   direction: {x: 0, y: 0, z: 1}
   disorder: 0

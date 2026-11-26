@@ -61,7 +61,7 @@ public class PlayerMouvement : MonoBehaviour
         if (slow)
         {
             //slow the slowSpeed variable
-            slowSpeed = 0.6f;
+            slowSpeed = 0.4f;
             return;
         }
         //else set it back to 1

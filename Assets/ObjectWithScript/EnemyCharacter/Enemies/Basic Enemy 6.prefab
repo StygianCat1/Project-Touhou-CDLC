@@ -80,7 +80,7 @@ GameObject:
   - component: {fileID: 4129900465325549110}
   - component: {fileID: 9073512863442016159}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Basic Enemy 6
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -214,7 +214,7 @@ MonoBehaviour:
   health: 100
   maxHealth: 100
   pathToFollow: {fileID: 0}
-  speed: 15
+  speed: 10
 --- !u!114 &4129900465325549110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,7 +227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea47c9772f07a184684de473e8a27697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitTime: 3
+  waitTime: 0
 --- !u!114 &9073512863442016159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -240,10 +240,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db1bf9a0299df4f9c7c5885f55e6e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  typeOfAttack: 2
-  bullet: {fileID: 2219929576886428445, guid: 4445e969f20d7b54f875818f63185a90, type: 3}
+  typeOfAttack: 1
+  bullet: {fileID: 2219929576886428445, guid: a7925d0bb023b864e943d7af8388b355, type: 3}
   bulletSpawn: {fileID: 1794445628262847542}
   spawnAdjust: {fileID: 770885746782045476}
   numberOfShot: 10
-  numberOfBulletPerShot: 11
-  timeBetweenShots: 0.3
+  numberOfBulletPerShot: 5
+  timeBetweenShots: 0.05

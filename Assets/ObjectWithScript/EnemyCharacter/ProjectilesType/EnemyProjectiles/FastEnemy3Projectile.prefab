@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5531790972493649256}
   - component: {fileID: 3188447263608766865}
   m_Layer: 0
-  m_Name: EnemyProjectile2
+  m_Name: FastEnemy3Projectile
   m_TagString: EnemyProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -66,7 +66,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ec194f7a72192594fab670393e20f248, type: 2}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -121,8 +121,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c66f7f50dc82d7444baf18db04791f6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileType: 0
-  attackSpeed: 10
-  degreeOfRotationOnCurve: 0.3
+  projectileType: 1
+  attackSpeed: 15
+  degreeOfRotationOnCurve: 0.11
   direction: {x: 0, y: 0, z: 1}
   disorder: 0

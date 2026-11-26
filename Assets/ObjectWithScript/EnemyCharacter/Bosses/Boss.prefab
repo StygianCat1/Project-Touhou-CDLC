@@ -159,7 +159,7 @@ MonoBehaviour:
   waveScript: {fileID: 0}
   health: 0
   maxHealth: 0
-  nbrOfLife: 2
+  nbrOfLife: 3
   listOfBossDropPerLife:
   - bossDropPerLife:
     - {fileID: 6581181297074061766, guid: 43eea575e3ba2f743b98d9692de6b51a, type: 3}
@@ -172,7 +172,9 @@ MonoBehaviour:
     - {fileID: 6581181297074061766, guid: 43eea575e3ba2f743b98d9692de6b51a, type: 3}
   - bossDropPerLife:
     - {fileID: 6581181297074061766, guid: 988292177ed851340b5224847e945636, type: 3}
-  speed: 10
+  - bossDropPerLife:
+    - {fileID: 6581181297074061766, guid: 988292177ed851340b5224847e945636, type: 3}
+  speed: 20
   pathToFollow: {fileID: 0}
 --- !u!114 &5688302638149822073
 MonoBehaviour:
@@ -200,23 +202,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bossAttackPattern:
   - BossAttackType: 0
-    numberOfShot: 5
-    numberOfBulletPerShot: 31
-    timeBetweenShots: 1
-    projectile1Prefab: {fileID: 2219929576886428445, guid: 4445e969f20d7b54f875818f63185a90, type: 3}
-    projectile2Prefab: {fileID: 2219929576886428445, guid: 392bf20b7a2782a49a99f3220d7b4965, type: 3}
+    numberOfShot: 20
+    numberOfBulletPerShot: 30
+    timeBetweenShots: 0.6
+    projectile1Prefab: {fileID: 2219929576886428445, guid: 93143932198190d46adc33c8c4a1e7d7, type: 3}
+    projectile2Prefab: {fileID: 2219929576886428445, guid: f4fdf8a1d43906347976994f0dd909b7, type: 3}
+  - BossAttackType: 2
+    numberOfShot: 30
+    numberOfBulletPerShot: 14
+    timeBetweenShots: 0.5
+    projectile1Prefab: {fileID: 2219929576886428445, guid: 6cf4ab09b2e9c37408568518d5656dc9, type: 3}
+    projectile2Prefab: {fileID: 0}
+  - BossAttackType: 6
+    numberOfShot: 6
+    numberOfBulletPerShot: 6
+    timeBetweenShots: 0.6
+    projectile1Prefab: {fileID: 2219929576886428445, guid: bd6d5786118360f4abadd53c5610eb0a, type: 3}
+    projectile2Prefab: {fileID: 0}
   - BossAttackType: 5
     numberOfShot: 120
-    numberOfBulletPerShot: 12
-    timeBetweenShots: 0.25
-    projectile1Prefab: {fileID: 2219929576886428445, guid: 4445e969f20d7b54f875818f63185a90, type: 3}
-    projectile2Prefab: {fileID: 2219929576886428445, guid: 392bf20b7a2782a49a99f3220d7b4965, type: 3}
-  - BossAttackType: 1
-    numberOfShot: 30
-    numberOfBulletPerShot: 50
-    timeBetweenShots: 0.05
-    projectile1Prefab: {fileID: 2219929576886428445, guid: 4445e969f20d7b54f875818f63185a90, type: 3}
-    projectile2Prefab: {fileID: 2219929576886428445, guid: 392bf20b7a2782a49a99f3220d7b4965, type: 3}
+    numberOfBulletPerShot: 10
+    timeBetweenShots: 0.15
+    projectile1Prefab: {fileID: 2219929576886428445, guid: 0210450c742c6ae4284e9fa464f6a047, type: 3}
+    projectile2Prefab: {fileID: 2219929576886428445, guid: 077e577ddfe49d942aabf7f0bbb86079, type: 3}
   bulletSpawn: {fileID: 7131005161442584810}
   spawnAdjust: {fileID: 336282849175870326}
   stageLenght: {fileID: 0}
