@@ -47,7 +47,7 @@ public class Capacity_GUI : MonoBehaviour
     
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    private void Start()
+    public void UpdateTheCapacitySprite()
     {
         //Set all capacity with their sprite
         SetUpActiveCapacity();
@@ -68,6 +68,8 @@ public class Capacity_GUI : MonoBehaviour
             //Search for same name 
             if (activeCapacity == capacityWithImage[i].name)
             {
+                //print(activeCapacity);
+                //print(i);
                 //If same name then put the sprite in the image
                 activeCapacityImage.sprite = capacityWithImage[i].sprite;
             }

@@ -156,5 +156,6 @@ public class CharacterOwnedCapacity : MonoBehaviour
         gUI.GetComponent<Capacity_GUI>().equipmentCapacity2 = equipmentCapacity2;
         gUI.GetComponent<Capacity_GUI>().passiveCapacity1 = passiveCapacity1;
         gUI.GetComponent<Capacity_GUI>().passiveCapacity2 = passiveCapacity2;
+        gUI.GetComponent<Capacity_GUI>().UpdateTheCapacitySprite();
     }
 }
