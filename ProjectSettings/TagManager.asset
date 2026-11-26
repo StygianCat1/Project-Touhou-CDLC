@@ -8,6 +8,7 @@ TagManager:
   - EnemyProjectile
   - Collectible
   - GUI
+  - BossHealthUI
   layers:
   - Default
   - TransparentFX

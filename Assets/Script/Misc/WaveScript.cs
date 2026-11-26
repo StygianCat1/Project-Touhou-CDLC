@@ -175,6 +175,7 @@ public class WaveScript : MonoBehaviour
             stats.waveScript = this;
             BossAttack attack = boss.GetComponent<BossAttack>();
             attack.stageLenght = stageLenghtRefForBosses;
+            
         }
     }
     

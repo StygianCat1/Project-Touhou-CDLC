@@ -226,11 +226,16 @@ public class Stats : MonoBehaviour
 
     private void Start()
     {
+        
         //Reference the component
         _shootRef = GetComponent<Shoot>();
         _bombRef = GetComponent<Bomb>(); 
         _equipementArmorProtetionRef = GetComponent<EquipementArmorProtetion>();
         continueUi.GetComponent<Continue>().stats = this;
+        
+        //static variable set to change kit in shoot et bomb
+        kitchoosed = Save.kitChoosed;
+        
         //reference the GameObject
         gameUI = GameObject.FindGameObjectWithTag("GUI");
         beginPos = transform.position;

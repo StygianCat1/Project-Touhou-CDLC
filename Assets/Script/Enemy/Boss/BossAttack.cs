@@ -341,8 +341,6 @@ public class BossAttack : MonoBehaviour
 
     private void RaindropAttack()
     {
-        print(indexOfShot);
-        print(bossAttackPattern[bossPatternIndex].numberOfShot);
         if (indexOfShot < bossAttackPattern[bossPatternIndex].numberOfShot)
         {
             //If has to, then stop attack

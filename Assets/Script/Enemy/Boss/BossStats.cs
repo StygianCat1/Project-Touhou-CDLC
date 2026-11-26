@@ -10,7 +10,6 @@ public class bossDropPerDeath
 }
 
 
-
 public class BossStats : MonoBehaviour
 {
     //Ref to boss attack
@@ -49,6 +48,7 @@ public class BossStats : MonoBehaviour
                 //If boss has no more lives
                 if (nbrOfLife <= 0)
                 {
+                    BossHealthUi.GetComponent<Boss_GUI>().HideUI();
                     //Destroy it and all its projectiles, drop collectables and tell wave system that the boss is defeated 
                     DestroyAllProjectiles();
                     DropCollectibleOnLifeLost();
@@ -65,6 +65,22 @@ public class BossStats : MonoBehaviour
                 currentHealth = maxHealth;
                 wasCalled = false;
             }
+            BossHealthUi.GetComponent<Boss_GUI>().UpdateAll(currentHealth, maxHealth, nbrOfLife);
+        }
+    }
+
+
+    private GameObject BossHealthUi;
+
+    public GameObject bossUi
+    {
+        get { return BossHealthUi; }
+        
+        set
+        {
+            BossHealthUi = value;
+            BossHealthUi.GetComponent<Boss_GUI>().ShowUI();
+            BossHealthUi.GetComponent<Boss_GUI>().UpdateAll(currentHealth, maxHealth, nbrOfLife);
         }
     }
     
@@ -73,6 +89,7 @@ public class BossStats : MonoBehaviour
     {
         //Reference the component
         attacktype = GetComponent<BossAttack>();
+        bossUi = GameObject.FindGameObjectWithTag("BossHealthUI");
     }
 
     //Allow the wave manager to change health value

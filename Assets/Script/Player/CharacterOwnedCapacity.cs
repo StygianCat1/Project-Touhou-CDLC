@@ -43,6 +43,13 @@ public class CharacterOwnedCapacity : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
+        //Static variables put before set up
+        activeCapacity = Save.activeCapacityName;
+        equipmentCapacity1 = Save.equipmentCapacity1Name;
+        equipmentCapacity2 = Save.equipmentCapacity2Name;
+        passiveCapacity1 = Save.passiveCapacity1Name;
+        passiveCapacity2 = Save.passiveCapacity2Name;
+        
         //Set everything at the beginning
         SetActiveAbility();
         SetEquipmentAbility();

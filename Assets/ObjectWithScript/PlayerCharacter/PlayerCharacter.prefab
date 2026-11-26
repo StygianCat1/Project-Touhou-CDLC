@@ -582,7 +582,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kit: 0
   currentScore: 0
-  hilScore: 0
+  hiScore: 1000
   currentHealth: 3
   invulnerabilityTime: 3
   coreCollider: {fileID: 1551823834273375229}
@@ -714,7 +714,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41db3f893ea8f4c48a6036a422e6b84a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterKit: 1
+  characterKit: 0
   timeStopDuration: 2
   timeRewindDuration: 3
   coreCollider: {fileID: 2711503396753423735}
