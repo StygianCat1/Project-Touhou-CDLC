@@ -1,3 +1,4 @@
+using Unity.Mathematics.Geometry;
 using UnityEngine;
 
 public class EnemyStats : MonoBehaviour
@@ -21,7 +22,7 @@ public class EnemyStats : MonoBehaviour
         get { return health; }
         set
         {
-            health = value;
+            health = Mathf.Clamp(value, 0, maxHealth);
             if (health <= 0)
             {
                 _deathScript.DropOnDeath();
@@ -34,6 +35,7 @@ public class EnemyStats : MonoBehaviour
     {
         //Reference the component
         _deathScript = GetComponent<EnemyDeath>();
+        
     }
 
     

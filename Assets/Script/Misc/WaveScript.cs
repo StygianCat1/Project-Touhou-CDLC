@@ -85,7 +85,6 @@ public class WaveScript : MonoBehaviour
         //If the next wave is a boss wave then 
         else if (waveRounds[waveIndex+1].waveType == WaveType.Boss)
         {
-            print("spawn boss through normal mean");
             //Call the check for boss function after sometime
             Invoke(nameof(CheckForBoss), waveRounds[waveIndex].timeBetweenWaves +  (waveRounds[waveIndex].wave.Count * timeBetweenEnemies));
         }

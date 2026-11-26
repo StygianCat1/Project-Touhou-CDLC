@@ -44,6 +44,7 @@ public class PlayerMouvement : MonoBehaviour
         {
             //Give character a newPos (on a 2D axis)
             NewPos = new Vector3(_playerInputs.moveInput.x * movementSpeedMultiplier * slowSpeed , transform.position.y, _playerInputs.moveInput.y * movementSpeedMultiplier * slowSpeed * speedBoostMultiplier) * Time.deltaTime;
+            
         }
         
         // Check with Boundaries script if the newPos is in boundary

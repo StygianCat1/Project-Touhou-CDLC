@@ -117,7 +117,4 @@ public class SecondaryAttack : MonoBehaviour
         timerAttack2 += Time.unscaledDeltaTime * _shoot.attackSpeedBoostMultiplier;
         return false;
     }
-    
-    
-    
 }

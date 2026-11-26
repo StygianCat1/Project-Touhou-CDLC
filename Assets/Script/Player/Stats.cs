@@ -109,7 +109,7 @@ public class Stats : MonoBehaviour
                 }
                 //Set invincible as damage taken
                 InvincibilityTime();
-                print("make player spawn back at base transform");
+                Invoke(nameof(MakeRespawnToBeginPos), 0.1f);
             }
             //if the value is equal or superior
             else if (!(value < currentHealth))
@@ -136,6 +136,7 @@ public class Stats : MonoBehaviour
                 //Stop lose power and set continue UI to active
                 losePowerCheck = true;
                 continueUi.SetActive(true);
+                Invoke(nameof(MakeRespawnToBeginPos), 0.1f);
                 return;
             }
             //Lose power on take damage
@@ -220,6 +221,8 @@ public class Stats : MonoBehaviour
     private float invulnerabilityTimer;
     //Check for when lose power
     private bool losePowerCheck;
+    //Get begin position to teleport character there when damage taken
+    private Vector3 beginPos;
 
     private void Start()
     {
@@ -230,6 +233,7 @@ public class Stats : MonoBehaviour
         continueUi.GetComponent<Continue>().stats = this;
         //reference the GameObject
         gameUI = GameObject.FindGameObjectWithTag("GUI");
+        beginPos = transform.position;
     }
 
     //Responsible for time invincible / invulnerable
@@ -297,5 +301,10 @@ public class Stats : MonoBehaviour
             //Spawn them a bit higher than the character for him not to get them on spawn
             Instantiate(powerDrop, transform.position + new Vector3(0,0,5), transform.rotation);
         }
+    }
+
+    private void MakeRespawnToBeginPos()
+    {
+        transform.position = beginPos;
     }
 }

@@ -106,8 +106,7 @@ public class PlayerInputs : MonoBehaviour
     }
     
     
-    //A bunch of check for when an input is pressed / hover / released / ...
-    
+    //A bunch of check for when an input is pressed / hover / released / ... 
     public void OnMove(InputValue value)
     {
         moveInput = value.Get<Vector2>();

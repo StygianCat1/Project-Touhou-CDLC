@@ -16,7 +16,6 @@ public class PassiveRepetitiveHeartGain : MonoBehaviour
 
     public void Giveheal()
     {
-        print("Give heal");
         stats.health += healCapacity;
     }
 }

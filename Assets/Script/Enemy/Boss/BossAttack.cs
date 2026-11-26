@@ -31,7 +31,7 @@ public class BossAttack : MonoBehaviour
     //Player GameObject ref
     private GameObject playerRef;
 
-    //Lis of the pattern the boss has, need to be on par with the boss number of live
+    //List of the pattern the boss has, need to be on par with the boss number of live
     [SerializeField] public List<BossAttackPattern> bossAttackPattern;
     
     //Pos where the bullet will spawn

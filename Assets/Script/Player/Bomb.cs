@@ -193,7 +193,7 @@ public class Bomb : MonoBehaviour
             _playerInput.enabled = true;
             bodyCollider.enabled = true;
             coreCollider.enabled = true;
-            //Time is reversing is now false and record abck
+            //Time is reversing is now false and record back
             timeIsreversing = false;
         }
     }
