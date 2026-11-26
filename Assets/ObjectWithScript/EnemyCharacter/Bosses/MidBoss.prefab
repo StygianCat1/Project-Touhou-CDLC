@@ -162,16 +162,20 @@ MonoBehaviour:
   nbrOfLife: 2
   listOfBossDropPerLife:
   - bossDropPerLife:
-    - {fileID: 6581181297074061766, guid: 43eea575e3ba2f743b98d9692de6b51a, type: 3}
-    - {fileID: 6581181297074061766, guid: 43eea575e3ba2f743b98d9692de6b51a, type: 3}
-    - {fileID: 6581181297074061766, guid: 988292177ed851340b5224847e945636, type: 3}
-  - bossDropPerLife:
-    - {fileID: 6581181297074061766, guid: 988292177ed851340b5224847e945636, type: 3}
-    - {fileID: 6581181297074061766, guid: 988292177ed851340b5224847e945636, type: 3}
+    - {fileID: 6581181297074061766, guid: e37d1f31242d92d49ae182d8a03b3dda, type: 3}
     - {fileID: 6581181297074061766, guid: 43eea575e3ba2f743b98d9692de6b51a, type: 3}
     - {fileID: 6581181297074061766, guid: 43eea575e3ba2f743b98d9692de6b51a, type: 3}
   - bossDropPerLife:
     - {fileID: 6581181297074061766, guid: 988292177ed851340b5224847e945636, type: 3}
+    - {fileID: 6581181297074061766, guid: 988292177ed851340b5224847e945636, type: 3}
+    - {fileID: 6581181297074061766, guid: 43eea575e3ba2f743b98d9692de6b51a, type: 3}
+    - {fileID: 6581181297074061766, guid: 43eea575e3ba2f743b98d9692de6b51a, type: 3}
+  - bossDropPerLife:
+    - {fileID: 6581181297074061766, guid: 988292177ed851340b5224847e945636, type: 3}
+    - {fileID: 6581181297074061766, guid: 43eea575e3ba2f743b98d9692de6b51a, type: 3}
+    - {fileID: 6581181297074061766, guid: 43eea575e3ba2f743b98d9692de6b51a, type: 3}
+    - {fileID: 6581181297074061766, guid: 43eea575e3ba2f743b98d9692de6b51a, type: 3}
+    - {fileID: 6581181297074061766, guid: 43eea575e3ba2f743b98d9692de6b51a, type: 3}
   speed: 15
   pathToFollow: {fileID: 0}
 --- !u!114 &5688302638149822073

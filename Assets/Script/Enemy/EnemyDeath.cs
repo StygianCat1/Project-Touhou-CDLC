@@ -17,20 +17,28 @@ public class EnemyDeath : MonoBehaviour
     // Array of the possible collectable that enemy drop, with a drop rate
     [SerializeField]public droppableCollectible[] dropCollectibles;
 
+    //To not call drop collectible many time
+    private bool wasCalled;
+
     public void DropOnDeath()
     {
-        //For size of the list
-        for (int i = 0; i < dropCollectibles.Length; i++)
+        if (!wasCalled)
         {
-            //if the random give out a true result
-            if (Random.Range(0, 100) <= dropCollectibles[i].dropPercentage)
+            wasCalled = true;
+            //For size of the list
+            for (int i = 0; i < dropCollectibles.Length; i++)
             {
-                //Spawn the collectable and stop everytjing
-                Instantiate(dropCollectibles[i].collectiblePrefab, transform.position, Quaternion.identity);
-                break;
+                //if the random give out a true result
+                if (Random.Range(0, 100) <= dropCollectibles[i].dropPercentage)
+                {
+                    //Spawn the collectable and stop everytjing
+                    Instantiate(dropCollectibles[i].collectiblePrefab, transform.position, Quaternion.identity);
+                    break;
+                }
             }
+
+            //Destroy Enemy
+            Destroy(gameObject);
         }
-        //Destroy Enemy
-        Destroy(gameObject);
     }
 }

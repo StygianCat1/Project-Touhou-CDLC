@@ -162,18 +162,27 @@ MonoBehaviour:
   nbrOfLife: 3
   listOfBossDropPerLife:
   - bossDropPerLife:
-    - {fileID: 6581181297074061766, guid: 43eea575e3ba2f743b98d9692de6b51a, type: 3}
-    - {fileID: 6581181297074061766, guid: 43eea575e3ba2f743b98d9692de6b51a, type: 3}
-    - {fileID: 6581181297074061766, guid: 988292177ed851340b5224847e945636, type: 3}
-  - bossDropPerLife:
-    - {fileID: 6581181297074061766, guid: 988292177ed851340b5224847e945636, type: 3}
-    - {fileID: 6581181297074061766, guid: 988292177ed851340b5224847e945636, type: 3}
+    - {fileID: 6581181297074061766, guid: c19a90dddade9e247b434f5f0f2692d7, type: 3}
     - {fileID: 6581181297074061766, guid: 43eea575e3ba2f743b98d9692de6b51a, type: 3}
     - {fileID: 6581181297074061766, guid: 43eea575e3ba2f743b98d9692de6b51a, type: 3}
   - bossDropPerLife:
     - {fileID: 6581181297074061766, guid: 988292177ed851340b5224847e945636, type: 3}
+    - {fileID: 6581181297074061766, guid: 988292177ed851340b5224847e945636, type: 3}
+    - {fileID: 6581181297074061766, guid: 43eea575e3ba2f743b98d9692de6b51a, type: 3}
+    - {fileID: 6581181297074061766, guid: 43eea575e3ba2f743b98d9692de6b51a, type: 3}
+    - {fileID: 6581181297074061766, guid: 43eea575e3ba2f743b98d9692de6b51a, type: 3}
   - bossDropPerLife:
     - {fileID: 6581181297074061766, guid: 988292177ed851340b5224847e945636, type: 3}
+    - {fileID: 6581181297074061766, guid: 43eea575e3ba2f743b98d9692de6b51a, type: 3}
+    - {fileID: 6581181297074061766, guid: 43eea575e3ba2f743b98d9692de6b51a, type: 3}
+    - {fileID: 6581181297074061766, guid: 43eea575e3ba2f743b98d9692de6b51a, type: 3}
+    - {fileID: 6581181297074061766, guid: 43eea575e3ba2f743b98d9692de6b51a, type: 3}
+  - bossDropPerLife:
+    - {fileID: 6581181297074061766, guid: 988292177ed851340b5224847e945636, type: 3}
+    - {fileID: 6581181297074061766, guid: 43eea575e3ba2f743b98d9692de6b51a, type: 3}
+    - {fileID: 6581181297074061766, guid: 43eea575e3ba2f743b98d9692de6b51a, type: 3}
+    - {fileID: 6581181297074061766, guid: 43eea575e3ba2f743b98d9692de6b51a, type: 3}
+    - {fileID: 6581181297074061766, guid: 43eea575e3ba2f743b98d9692de6b51a, type: 3}
   speed: 20
   pathToFollow: {fileID: 0}
 --- !u!114 &5688302638149822073
@@ -201,6 +210,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bossAttackPattern:
+  - BossAttackType: 5
+    numberOfShot: 120
+    numberOfBulletPerShot: 10
+    timeBetweenShots: 0.15
+    projectile1Prefab: {fileID: 2219929576886428445, guid: 0210450c742c6ae4284e9fa464f6a047, type: 3}
+    projectile2Prefab: {fileID: 2219929576886428445, guid: 077e577ddfe49d942aabf7f0bbb86079, type: 3}
   - BossAttackType: 0
     numberOfShot: 20
     numberOfBulletPerShot: 30
@@ -219,12 +234,6 @@ MonoBehaviour:
     timeBetweenShots: 0.6
     projectile1Prefab: {fileID: 2219929576886428445, guid: bd6d5786118360f4abadd53c5610eb0a, type: 3}
     projectile2Prefab: {fileID: 0}
-  - BossAttackType: 5
-    numberOfShot: 120
-    numberOfBulletPerShot: 10
-    timeBetweenShots: 0.15
-    projectile1Prefab: {fileID: 2219929576886428445, guid: 0210450c742c6ae4284e9fa464f6a047, type: 3}
-    projectile2Prefab: {fileID: 2219929576886428445, guid: 077e577ddfe49d942aabf7f0bbb86079, type: 3}
   bulletSpawn: {fileID: 7131005161442584810}
   spawnAdjust: {fileID: 336282849175870326}
   stageLenght: {fileID: 0}

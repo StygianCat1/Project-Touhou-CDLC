@@ -33,6 +33,8 @@ public class BossStats : MonoBehaviour
     //Path the boss may take
     [SerializeField] public EnemyPath pathToFollow;
     
+    //To not call drop collectible many time
+    private bool wasCalled;
     
     //Getter Setter of the boss health
     public float currentHealth
@@ -61,6 +63,7 @@ public class BossStats : MonoBehaviour
                 attacktype.bossPatternIndex = nbrOfLife;
                 attacktype.stopAttack = true;
                 currentHealth = maxHealth;
+                wasCalled = false;
             }
         }
     }
@@ -82,16 +85,20 @@ public class BossStats : MonoBehaviour
     //Drop the collectable  
     private void DropCollectibleOnLifeLost()
     {
-        //Check if there's drop
-        if (listOfBossDropPerLife.Count == 0)
+        if (!wasCalled)
         {
-            //If no drop then skip
-            return;
-        }
-        //Spawn all the drop in the list of collectables for this boss phase
-        foreach (GameObject collectible in listOfBossDropPerLife[nbrOfLife].bossDropPerLife)
-        {
-            Instantiate(collectible, transform.position, Quaternion.identity);
+            wasCalled = true;
+            //Check if there's drop
+            if (listOfBossDropPerLife.Count == 0)
+            {
+                //If no drop then skip
+                return;
+            }
+            //Spawn all the drop in the list of collectables for this boss phase
+            foreach (GameObject collectible in listOfBossDropPerLife[nbrOfLife].bossDropPerLife)
+            {
+                Instantiate(collectible, transform.position, Quaternion.identity);
+            }
         }
     }
 

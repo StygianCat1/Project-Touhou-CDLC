@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -8572909027519816051}
   - component: {fileID: 5046090430808681101}
   m_Layer: 0
-  m_Name: BigPowerCollectible 1
+  m_Name: BigPowerCollectible
   m_TagString: Collectible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
