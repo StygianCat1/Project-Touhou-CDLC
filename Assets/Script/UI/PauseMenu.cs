@@ -5,7 +5,7 @@ public class PauseMenu : MonoBehaviour
 {
     private void OnEnable()
     {
-        print("test");
+        //print("test");
         Time.timeScale = 0;
     }
 

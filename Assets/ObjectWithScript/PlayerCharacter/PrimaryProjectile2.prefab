@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 0}
-  baseDamage: 1
+  baseDamage: 4
   otherPotentialMultiplier: 1
   totalDamage: 0
 --- !u!114 &-7652734568038883020
