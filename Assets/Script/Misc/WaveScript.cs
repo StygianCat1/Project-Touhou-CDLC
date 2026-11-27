@@ -33,7 +33,7 @@ public class WaveRound
     [SerializeField] public EnemyPath path;
 
     //An int that is used to control the time before next wave
-    [SerializeField] public int timeBetweenWaves;
+    [SerializeField] public float timeBetweenWaves;
 }
 
 public class WaveScript : MonoBehaviour

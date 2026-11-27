@@ -63,7 +63,6 @@ public class CharacterOwnedCapacity : MonoBehaviour
         //Check if there's an active capacity
         if (activeCapacity == CapacityName.None)
         {
-            print("there is not a active capacity");
             return;
         }
         //If one then check what it is

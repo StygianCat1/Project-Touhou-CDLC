@@ -24,6 +24,6 @@ public class PlayerProjectileDamage : MonoBehaviour
     void CalculateDamage()
     {
         //Calculate the total of the damage
-        totalDamage = ((stats.power / 2) + baseDamage) * otherPotentialMultiplier;
+        totalDamage = (stats.power / 10 + baseDamage) * otherPotentialMultiplier;
     }
 }
