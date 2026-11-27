@@ -64,6 +64,8 @@ public class WaveScript : MonoBehaviour
 
     private void BeginWave()
     {
+        print((waveIndex));
+        
         //if it was the last wave of the list
         if (waveRounds.Count - 1 <= waveIndex)
         {

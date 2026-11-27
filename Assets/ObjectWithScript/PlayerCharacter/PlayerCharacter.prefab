@@ -685,7 +685,7 @@ MonoBehaviour:
   primaryAttack1: {fileID: 7499642409147269758, guid: 669af045f5caa34498c0c709c498515c, type: 3}
   delayPrimaryAttack1: 0.1
   primaryAttack2: {fileID: 7499642409147269758, guid: eaed1fd38f6d99c4b9e9dda5fab6cfec, type: 3}
-  delayPrimaryAttack2: 0.05
+  delayPrimaryAttack2: 0.75
 --- !u!114 &3618851684131820548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -699,9 +699,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   secondaryAttack1: {fileID: 7499642409147269758, guid: 0714dfb6609c8c94982220c2b03112cd, type: 3}
-  delaySecondaryAttack1: 0.15
+  delaySecondaryAttack1: 0.175
   secondaryAttack2: {fileID: 7499642409147269758, guid: e4b212736fcbe9f41b25a3fd3e65c577, type: 3}
-  delaySecondaryAttack2: 0.3
+  delaySecondaryAttack2: 0.35
 --- !u!114 &6573782989405609904
 MonoBehaviour:
   m_ObjectHideFlags: 0
