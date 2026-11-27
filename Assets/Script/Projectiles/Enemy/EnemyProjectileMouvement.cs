@@ -60,14 +60,14 @@ public class EnemyProjectileMouvement : MonoBehaviour
     {
         //If it is curving then just a basic translation & a Rotate on the right
         transform.Translate(direction * attackSpeed * Time.deltaTime, Space.Self);
-        transform.Rotate(new Vector3(0,1,0), degreeOfRotationOnCurve);
+        transform.Rotate(new Vector3(0,1,0), degreeOfRotationOnCurve * 100 * Time.deltaTime, Space.Self);
     }
     
     private void MoveBulletCurvingLeft()
     {
         //If it is curving then just a basic translation & a Rotate on the left
         transform.Translate(direction * attackSpeed * Time.deltaTime, Space.Self);
-        transform.Rotate(new Vector3(0,-1,0), degreeOfRotationOnCurve);
+        transform.Rotate(new Vector3(0,-1,0), degreeOfRotationOnCurve * 100 * Time.deltaTime, Space.Self);
     }
     
     private void MoveBulletFalling()
